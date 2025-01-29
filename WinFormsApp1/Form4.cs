@@ -93,9 +93,9 @@ namespace WinFormsApp1
 			TabPage tabPage = new TabPage();
 
 			tabPage.Text = questionNumber++ + " вопрос";
-			tabPage.BackColor = Color.White;
+            tabPage.BackColor = Color.FromArgb(25, 27, 39);
 
-			Button buttonDeleteQuestion = new Button();
+            Button buttonDeleteQuestion = new Button();
 			Button buttonAddQuestion = new Button();
 			ComboBox comboBoxChooseTypeOfAnswer = new ComboBox();
 			Button buttonNextQuestion = new Button();
@@ -114,31 +114,40 @@ namespace WinFormsApp1
 			TextBox textBoxQuestionName = new TextBox();
 
 			buttonDeleteQuestion.Font = new Font("Segoe UI", 12F);
-			buttonDeleteQuestion.Location = new Point(378, 374);
+            buttonDeleteQuestion.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonDeleteQuestion.FlatStyle = FlatStyle.Flat;
+            buttonDeleteQuestion.BackColor = Color.FromArgb(150, 73, 244);
+            buttonDeleteQuestion.Location = new Point(378, 374);
 			buttonDeleteQuestion.Name = "buttonDeleteQuestion";
 			buttonDeleteQuestion.Size = new Size(162, 36);
 			buttonDeleteQuestion.TabIndex = 1;
-			buttonDeleteQuestion.Text = "Удалить вопрос";
+            buttonDeleteQuestion.ForeColor = Color.White;
+            buttonDeleteQuestion.Text = "Удалить вопрос";
 			buttonDeleteQuestion.UseVisualStyleBackColor = true;
-			buttonDeleteQuestion.BackColor = Color.White;
 			buttonDeleteQuestion.Click += buttonDeleteQuestion_Click;
 
 			tabPage.Controls.Add(buttonDeleteQuestion);
 
 			buttonAddQuestion.Font = new Font("Segoe UI", 12F);
-			buttonAddQuestion.Location = new Point(378, 332);
+            buttonAddQuestion.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonAddQuestion.FlatStyle = FlatStyle.Flat;
+            buttonAddQuestion.BackColor = Color.FromArgb(150, 73, 244);
+            buttonAddQuestion.Location = new Point(378, 332);
 			buttonAddQuestion.Name = "buttonAddQuestion";
 			buttonAddQuestion.Size = new Size(162, 36);
 			buttonAddQuestion.TabIndex = 0;
-			buttonAddQuestion.Text = "Добавить вопрос";
+            buttonAddQuestion.ForeColor = Color.White;
+            buttonAddQuestion.Text = "Добавить вопрос";
 			buttonAddQuestion.UseVisualStyleBackColor = true;
-			buttonAddQuestion.BackColor = Color.White;
 			buttonAddQuestion.Click += buttonAddQuestion_Click;
 
 			tabPage.Controls.Add(buttonAddQuestion);
 
 			comboBoxChooseTypeOfAnswer.Font = new Font("Segoe UI", 12F);
-			comboBoxChooseTypeOfAnswer.FormattingEnabled = true;
+            comboBoxChooseTypeOfAnswer.FlatStyle = FlatStyle.Flat;
+            comboBoxChooseTypeOfAnswer.BackColor = Color.FromArgb(25, 27, 39);
+            comboBoxChooseTypeOfAnswer.ForeColor = Color.White;
+            comboBoxChooseTypeOfAnswer.FormattingEnabled = true;
 			comboBoxChooseTypeOfAnswer.Items.AddRange(new object[] { "Радио кнопка", "Чекбокс" });
 			comboBoxChooseTypeOfAnswer.Location = new Point(378, 12);
 			comboBoxChooseTypeOfAnswer.Name = "comboBoxChooseTypeOfAnswer";
@@ -149,25 +158,31 @@ namespace WinFormsApp1
 
 			tabPage.Controls.Add(comboBoxChooseTypeOfAnswer);
 
-			buttonNextQuestion.BackColor = Color.White;
-			buttonNextQuestion.Font = new Font("Segoe UI", 12F);
+            buttonNextQuestion.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonNextQuestion.FlatStyle = FlatStyle.Flat;
+            buttonNextQuestion.BackColor = Color.FromArgb(150, 73, 244);
+            buttonNextQuestion.Font = new Font("Segoe UI", 12F);
 			buttonNextQuestion.Location = new Point(190, 352);
 			buttonNextQuestion.Name = "buttonNextQuestion";
 			buttonNextQuestion.Size = new Size(162, 36);
 			buttonNextQuestion.TabIndex = 15;
 			buttonNextQuestion.Text = "Далее";
-			buttonNextQuestion.UseVisualStyleBackColor = false;
+            buttonNextQuestion.ForeColor = Color.White;
+            buttonNextQuestion.UseVisualStyleBackColor = false;
 			buttonNextQuestion.Click += buttonNextQuestion_Click;
 
 			tabPage.Controls.Add(buttonNextQuestion);
 
-			buttonPreviousQuestion.BackColor = Color.White;
+            buttonPreviousQuestion.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonPreviousQuestion.FlatStyle = FlatStyle.Flat;
+            buttonPreviousQuestion.BackColor = Color.FromArgb(150, 73, 244);
 			buttonPreviousQuestion.Font = new Font("Segoe UI", 12F);
 			buttonPreviousQuestion.Location = new Point(7, 352);
 			buttonPreviousQuestion.Name = "buttonPreviousQuestion";
 			buttonPreviousQuestion.Size = new Size(162, 36);
 			buttonPreviousQuestion.TabIndex = 14;
-			buttonPreviousQuestion.Text = "Назад";
+            buttonPreviousQuestion.ForeColor = Color.White;
+            buttonPreviousQuestion.Text = "Назад";
 			buttonPreviousQuestion.UseVisualStyleBackColor = false;
 			buttonPreviousQuestion.Click += buttonPreviousQuestion_Click;
 
@@ -224,7 +239,9 @@ namespace WinFormsApp1
 			tabPage.Controls.Add(checkBoxIsTrueFifth);
 
 			textBoxQuestionName.Font = new Font("Segoe UI", 12F);
-			textBoxQuestionName.Location = new Point(7, 12);
+            textBoxQuestionName.BackColor = Color.FromArgb(25, 27, 39);
+			textBoxQuestionName.ForeColor = Color.White;
+            textBoxQuestionName.Location = new Point(7, 12);
 			textBoxQuestionName.Name = "textBoxQuestionName";
 			textBoxQuestionName.PlaceholderText = "Вопрос";
 			textBoxQuestionName.Size = new Size(303, 29);
@@ -233,7 +250,9 @@ namespace WinFormsApp1
 			tabPage.Controls.Add(textBoxQuestionName);
 
 			textBoxFirstQuestion.Font = new Font("Segoe UI", 12F);
-			textBoxFirstQuestion.Location = new Point(7, 85);
+            textBoxFirstQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxFirstQuestion.ForeColor = Color.White;
+            textBoxFirstQuestion.Location = new Point(7, 85);
 			textBoxFirstQuestion.Name = "textBoxFirstQuestion";
 			textBoxFirstQuestion.PlaceholderText = "Первый вариант ответа";
 			textBoxFirstQuestion.Size = new Size(374, 29);
@@ -242,7 +261,9 @@ namespace WinFormsApp1
 			tabPage.Controls.Add(textBoxFirstQuestion);
 
 			textBoxSecondQuestion.Font = new Font("Segoe UI", 12F);
-			textBoxSecondQuestion.Location = new Point(7, 131);
+            textBoxSecondQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxSecondQuestion.ForeColor = Color.White;
+            textBoxSecondQuestion.Location = new Point(7, 131);
 			textBoxSecondQuestion.Name = "textBoxSecondQuestion";
 			textBoxSecondQuestion.PlaceholderText = "Второй вариант ответа";
 			textBoxSecondQuestion.Size = new Size(374, 29);
@@ -251,7 +272,9 @@ namespace WinFormsApp1
 			tabPage.Controls.Add(textBoxSecondQuestion);
 
 			textBoxThirdQuestion.Font = new Font("Segoe UI", 12F);
-			textBoxThirdQuestion.Location = new Point(7, 175);
+            textBoxThirdQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxThirdQuestion.ForeColor = Color.White;
+            textBoxThirdQuestion.Location = new Point(7, 175);
 			textBoxThirdQuestion.Name = "textBoxThirdQuestion";
 			textBoxThirdQuestion.PlaceholderText = "Третий вариант ответа";
 			textBoxThirdQuestion.Size = new Size(374, 29);
@@ -260,7 +283,9 @@ namespace WinFormsApp1
 			tabPage.Controls.Add(textBoxThirdQuestion);
 
 			textBoxFourthQuestion.Font = new Font("Segoe UI", 12F);
-			textBoxFourthQuestion.Location = new Point(7, 217);
+            textBoxFourthQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxFourthQuestion.ForeColor = Color.White;
+            textBoxFourthQuestion.Location = new Point(7, 217);
 			textBoxFourthQuestion.Name = "textBoxFourthQuestion";
 			textBoxFourthQuestion.PlaceholderText = "Четвертый вариант ответа";
 			textBoxFourthQuestion.Size = new Size(374, 29);
@@ -269,7 +294,9 @@ namespace WinFormsApp1
 			tabPage.Controls.Add(textBoxFourthQuestion);
 
 			textBoxFifthQuestion.Font = new Font("Segoe UI", 12F);
-			textBoxFifthQuestion.Location = new Point(7, 256);
+            textBoxFifthQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxFifthQuestion.ForeColor = Color.White;
+            textBoxFifthQuestion.Location = new Point(7, 256);
 			textBoxFifthQuestion.Name = "textBoxFifthQuestion";
 			textBoxFifthQuestion.PlaceholderText = "Пятый вариант ответа";
 			textBoxFifthQuestion.Size = new Size(374, 29);
@@ -333,19 +360,27 @@ namespace WinFormsApp1
                 return;
 			}
 
-			//Проверяем, создаем ли мы тест с названием которое уже существует,
-			//Если существует, то дописываем его
-			//Если нет то создаем новый
-			foreach (var node in TreeNode.tests)
-			{
-				if (textBoxName.Text == node.ID && node.GetChild(level) == null)
-				{
-					testWrapper = node;
-					exists = true;
-				}
-			}
+            //Проверяем, создаем ли мы тест с названием которое уже существует,
+            //Если существует, то дописываем его
+            //Если нет то создаем новый
 
-			if (testWrapper == null)
+
+			//Не дает дописать тест
+            foreach (var node in TreeNode.tests)
+            {
+                if (textBoxName.Text == node.ID && node.GetChild(level) == null)
+                {
+                    testWrapper = node;
+                    exists = true;
+                }
+                else if (textBoxName.Text == node.ID && node.GetChild(level) != null)
+                {
+                    showError("Тест с таким именем и уровнем уже существует");
+                    return;
+                }
+            }
+
+            if (testWrapper == null)
 			{
                 testWrapper = new TreeNode(textBoxName.Text)
                 {
@@ -472,7 +507,15 @@ namespace WinFormsApp1
 						}
 
                         question = new TreeNode(text);
-                        node.Add(question);
+						try
+						{
+                           node.Add(question);
+                        }
+                        catch
+						{
+							showError("Вопрос не должен иметь одинаковые варианты ответа");
+							return;
+						}
                     }
 				}
 

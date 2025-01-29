@@ -3,19 +3,19 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class FormRegistration : Form
     {
 
-        public Form1()
+        public FormRegistration()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "Максим Штин";
-            textBox2.Text = "ИС-22";
-            if (!Regex.IsMatch(textBox1.Text, @"^[А-Я]{1}[а-я]+ [А-Я]{1}[а-я]+([А-Я]{1}[а-я]+$)?"))
+            textBoxFullName.Text = "Максим Штин";
+            textBoxGroup.Text = "ИС-22";
+            if (!Regex.IsMatch(textBoxFullName.Text, @"^[А-Я]{1}[а-я]+ [А-Я]{1}[а-я]+([А-Я]{1}[а-я]+$)?"))
             {
                 MessageBox.Show(
                     "Введите верное ФИО",
@@ -25,7 +25,7 @@ namespace WinFormsApp1
                 return;
             }
 
-            if (!Regex.IsMatch(textBox2.Text, @"^[А-Я]+\-\d{2}$"))
+            if (!Regex.IsMatch(textBoxGroup.Text, @"^[А-Я]+\-\d{2}$"))
             {
                 MessageBox.Show(
                     "Введите верное название группы",
@@ -43,3 +43,12 @@ namespace WinFormsApp1
         }
     }
 }
+
+
+/*
+ 
+Редактирование теста
+
+Просмотр результатов теста - значит нельзя создавать тест с одинаковым названием
+ 
+ */

@@ -94,6 +94,16 @@ namespace WinFormsApp1
                     }
                 }
 
+                if (child == null)
+                {
+                    MessageBox.Show(
+                        "Выбранного теста не существует",
+                        "Ошибка",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+
                 Form3 form3 = new Form3(subject, level, child);
                 form3.Show();
                 this.Close();
@@ -106,10 +116,6 @@ namespace WinFormsApp1
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-
-
-
-
         }
 
         private void addTestButton_Click(object sender, EventArgs e)

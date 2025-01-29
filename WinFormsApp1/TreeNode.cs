@@ -1,4 +1,7 @@
-﻿public class TreeNode : IEnumerable<TreeNode>
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
+
+public class TreeNode : IEnumerable<TreeNode>
 {
     private readonly Dictionary<string, TreeNode> _children =
                                         new Dictionary<string, TreeNode>();
@@ -19,7 +22,10 @@
 
     public TreeNode GetChild(string id)
     {
-        return this._children[id];
+        /*return this._children[id];*/
+        TreeNode res;
+        _children.TryGetValue(id, out res);
+        return res;
     }
 
     public void Add(TreeNode item)

@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class Form1
+    partial class FormRegistration
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,92 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            textBox2 = new TextBox();
-            label3 = new Label();
+            buttonNext = new Button();
+            textBoxFullName = new TextBox();
+            labelFullName = new Label();
+            labelGroup = new Label();
+            textBoxGroup = new TextBox();
             SuspendLayout();
             // 
-            // button1
+            // buttonNext
             // 
-            button1.BackColor = Color.White;
-            button1.Font = new Font("Segoe UI", 12F);
-            button1.Location = new Point(323, 301);
-            button1.Name = "button1";
-            button1.Size = new Size(155, 40);
-            button1.TabIndex = 2;
-            button1.Text = "Далее";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            buttonNext.BackColor = Color.FromArgb(150, 73, 244);
+            buttonNext.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonNext.FlatStyle = FlatStyle.Flat;
+            buttonNext.Font = new Font("Segoe UI", 12F);
+            buttonNext.ForeColor = Color.White;
+            buttonNext.Location = new Point(323, 301);
+            buttonNext.Margin = new Padding(10);
+            buttonNext.Name = "buttonNext";
+            buttonNext.Size = new Size(155, 40);
+            buttonNext.TabIndex = 2;
+            buttonNext.Text = "Далее";
+            buttonNext.UseVisualStyleBackColor = false;
+            buttonNext.Click += button1_Click;
             // 
-            // textBox1
+            // textBoxFullName
             // 
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(295, 177);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "ФИО";
-            textBox1.Size = new Size(210, 29);
-            textBox1.TabIndex = 0;
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            textBoxFullName.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxFullName.Font = new Font("Segoe UI", 12F);
+            textBoxFullName.ForeColor = Color.White;
+            textBoxFullName.Location = new Point(295, 177);
+            textBoxFullName.Name = "textBoxFullName";
+            textBoxFullName.PlaceholderText = "ФИО";
+            textBoxFullName.Size = new Size(210, 29);
+            textBoxFullName.TabIndex = 0;
+            textBoxFullName.TextAlign = HorizontalAlignment.Center;
             // 
-            // label1
+            // labelFullName
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(328, 141);
-            label1.Name = "label1";
-            label1.Size = new Size(144, 21);
-            label1.TabIndex = 3;
-            label1.Text = "Введите свое ФИО";
+            labelFullName.AutoSize = true;
+            labelFullName.Font = new Font("Segoe UI", 12F);
+            labelFullName.ForeColor = Color.White;
+            labelFullName.Location = new Point(328, 141);
+            labelFullName.Name = "labelFullName";
+            labelFullName.Size = new Size(144, 21);
+            labelFullName.TabIndex = 3;
+            labelFullName.Text = "Введите свое ФИО";
             // 
-            // label2
+            // labelGroup
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(340, 221);
-            label2.Name = "label2";
-            label2.Size = new Size(121, 21);
-            label2.TabIndex = 4;
-            label2.Text = "Введите группу";
+            labelGroup.AutoSize = true;
+            labelGroup.Font = new Font("Segoe UI", 12F);
+            labelGroup.ForeColor = Color.White;
+            labelGroup.Location = new Point(340, 221);
+            labelGroup.Name = "labelGroup";
+            labelGroup.Size = new Size(121, 21);
+            labelGroup.TabIndex = 4;
+            labelGroup.Text = "Введите группу";
             // 
-            // textBox2
+            // textBoxGroup
             // 
-            textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.Location = new Point(350, 257);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Группа";
-            textBox2.Size = new Size(100, 29);
-            textBox2.TabIndex = 1;
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            textBoxGroup.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxGroup.Font = new Font("Segoe UI", 12F);
+            textBoxGroup.ForeColor = SystemColors.Window;
+            textBoxGroup.Location = new Point(350, 257);
+            textBoxGroup.Name = "textBoxGroup";
+            textBoxGroup.PlaceholderText = "Группа";
+            textBoxGroup.RightToLeft = RightToLeft.No;
+            textBoxGroup.Size = new Size(100, 29);
+            textBoxGroup.TabIndex = 1;
+            textBoxGroup.TextAlign = HorizontalAlignment.Center;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(328, 365);
-            label3.Name = "label3";
-            label3.Size = new Size(0, 21);
-            label3.TabIndex = 6;
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // Form1
+            // FormRegistration
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(25, 27, 39);
             ClientSize = new Size(800, 450);
-            Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(textBoxGroup);
+            Controls.Add(labelGroup);
+            Controls.Add(labelFullName);
+            Controls.Add(textBoxFullName);
+            Controls.Add(buttonNext);
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Form1";
+            Name = "FormRegistration";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ввод информации";
             ResumeLayout(false);
@@ -122,11 +122,10 @@
 
         #endregion
 
-        private Button button1;
-        private TextBox textBox1;
-        private Label label1;
-        private Label label2;
-        private TextBox textBox2;
-        private Label label3;
+        private Button buttonNext;
+        private TextBox textBoxFullName;
+        private Label labelFullName;
+        private Label labelGroup;
+        private TextBox textBoxGroup;
     }
 }

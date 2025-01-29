@@ -62,15 +62,15 @@
             // testingTab
             // 
             testingTab.Controls.Add(tabPageTesting);
-            testingTab.Location = new Point(1, -2);
+            testingTab.Location = new Point(-7, -2);
             testingTab.Name = "testingTab";
             testingTab.SelectedIndex = 0;
-            testingTab.Size = new Size(572, 455);
+            testingTab.Size = new Size(582, 460);
             testingTab.TabIndex = 2;
             // 
             // tabPageTesting
             // 
-            tabPageTesting.BackColor = Color.White;
+            tabPageTesting.BackColor = Color.FromArgb(25, 27, 39);
             tabPageTesting.Controls.Add(textBoxQuestionName);
             tabPageTesting.Controls.Add(buttonNextQuestion);
             tabPageTesting.Controls.Add(buttonPreviousQuestion);
@@ -89,13 +89,15 @@
             tabPageTesting.Controls.Add(buttonAddQuestion);
             tabPageTesting.Location = new Point(4, 24);
             tabPageTesting.Name = "tabPageTesting";
-            tabPageTesting.Size = new Size(564, 427);
+            tabPageTesting.Size = new Size(574, 432);
             tabPageTesting.TabIndex = 0;
             tabPageTesting.Text = "1 вопрос";
             // 
             // textBoxQuestionName
             // 
+            textBoxQuestionName.BackColor = Color.FromArgb(25, 27, 39);
             textBoxQuestionName.Font = new Font("Segoe UI", 12F);
+            textBoxQuestionName.ForeColor = Color.White;
             textBoxQuestionName.Location = new Point(7, 12);
             textBoxQuestionName.Name = "textBoxQuestionName";
             textBoxQuestionName.PlaceholderText = "Вопрос";
@@ -104,8 +106,11 @@
             // 
             // buttonNextQuestion
             // 
-            buttonNextQuestion.BackColor = Color.White;
+            buttonNextQuestion.BackColor = Color.FromArgb(150, 73, 244);
+            buttonNextQuestion.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonNextQuestion.FlatStyle = FlatStyle.Flat;
             buttonNextQuestion.Font = new Font("Segoe UI", 12F);
+            buttonNextQuestion.ForeColor = Color.White;
             buttonNextQuestion.Location = new Point(190, 352);
             buttonNextQuestion.Name = "buttonNextQuestion";
             buttonNextQuestion.Size = new Size(162, 36);
@@ -116,8 +121,11 @@
             // 
             // buttonPreviousQuestion
             // 
-            buttonPreviousQuestion.BackColor = Color.White;
+            buttonPreviousQuestion.BackColor = Color.FromArgb(150, 73, 244);
+            buttonPreviousQuestion.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonPreviousQuestion.FlatStyle = FlatStyle.Flat;
             buttonPreviousQuestion.Font = new Font("Segoe UI", 12F);
+            buttonPreviousQuestion.ForeColor = Color.White;
             buttonPreviousQuestion.Location = new Point(7, 352);
             buttonPreviousQuestion.Name = "buttonPreviousQuestion";
             buttonPreviousQuestion.Size = new Size(162, 36);
@@ -130,6 +138,7 @@
             // 
             checkBoxIsTrueFirst.AutoSize = true;
             checkBoxIsTrueFirst.Font = new Font("Segoe UI", 12F);
+            checkBoxIsTrueFirst.ForeColor = Color.Black;
             checkBoxIsTrueFirst.Location = new Point(398, 92);
             checkBoxIsTrueFirst.Name = "checkBoxIsTrueFirst";
             checkBoxIsTrueFirst.Size = new Size(15, 14);
@@ -178,7 +187,9 @@
             // 
             // textBoxFirstQuestion
             // 
+            textBoxFirstQuestion.BackColor = Color.FromArgb(25, 27, 39);
             textBoxFirstQuestion.Font = new Font("Segoe UI", 12F);
+            textBoxFirstQuestion.ForeColor = Color.White;
             textBoxFirstQuestion.Location = new Point(7, 85);
             textBoxFirstQuestion.Name = "textBoxFirstQuestion";
             textBoxFirstQuestion.PlaceholderText = "Первый вариант ответа";
@@ -187,7 +198,9 @@
             // 
             // textBoxSecondQuestion
             // 
+            textBoxSecondQuestion.BackColor = Color.FromArgb(25, 27, 39);
             textBoxSecondQuestion.Font = new Font("Segoe UI", 12F);
+            textBoxSecondQuestion.ForeColor = Color.White;
             textBoxSecondQuestion.Location = new Point(7, 131);
             textBoxSecondQuestion.Name = "textBoxSecondQuestion";
             textBoxSecondQuestion.PlaceholderText = "Второй вариант ответа";
@@ -196,7 +209,9 @@
             // 
             // textBoxThirdQuestion
             // 
+            textBoxThirdQuestion.BackColor = Color.FromArgb(25, 27, 39);
             textBoxThirdQuestion.Font = new Font("Segoe UI", 12F);
+            textBoxThirdQuestion.ForeColor = Color.White;
             textBoxThirdQuestion.Location = new Point(7, 175);
             textBoxThirdQuestion.Name = "textBoxThirdQuestion";
             textBoxThirdQuestion.PlaceholderText = "Третий вариант ответа";
@@ -205,7 +220,9 @@
             // 
             // textBoxFourthQuestion
             // 
+            textBoxFourthQuestion.BackColor = Color.FromArgb(25, 27, 39);
             textBoxFourthQuestion.Font = new Font("Segoe UI", 12F);
+            textBoxFourthQuestion.ForeColor = Color.White;
             textBoxFourthQuestion.Location = new Point(7, 217);
             textBoxFourthQuestion.Name = "textBoxFourthQuestion";
             textBoxFourthQuestion.PlaceholderText = "Четвертый вариант ответа";
@@ -214,7 +231,9 @@
             // 
             // textBoxFifthQuestion
             // 
+            textBoxFifthQuestion.BackColor = Color.FromArgb(25, 27, 39);
             textBoxFifthQuestion.Font = new Font("Segoe UI", 12F);
+            textBoxFifthQuestion.ForeColor = Color.White;
             textBoxFifthQuestion.Location = new Point(7, 256);
             textBoxFifthQuestion.Name = "textBoxFifthQuestion";
             textBoxFifthQuestion.PlaceholderText = "Пятый вариант ответа";
@@ -223,7 +242,10 @@
             // 
             // comboBoxChooseTypeOfAnswer
             // 
+            comboBoxChooseTypeOfAnswer.BackColor = Color.FromArgb(25, 27, 39);
+            comboBoxChooseTypeOfAnswer.FlatStyle = FlatStyle.Flat;
             comboBoxChooseTypeOfAnswer.Font = new Font("Segoe UI", 12F);
+            comboBoxChooseTypeOfAnswer.ForeColor = Color.White;
             comboBoxChooseTypeOfAnswer.FormattingEnabled = true;
             comboBoxChooseTypeOfAnswer.Items.AddRange(new object[] { "Радио кнопка", "Чекбокс" });
             comboBoxChooseTypeOfAnswer.Location = new Point(378, 12);
@@ -235,8 +257,11 @@
             // 
             // buttonDeleteQuestion
             // 
-            buttonDeleteQuestion.BackColor = Color.White;
+            buttonDeleteQuestion.BackColor = Color.FromArgb(150, 73, 244);
+            buttonDeleteQuestion.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonDeleteQuestion.FlatStyle = FlatStyle.Flat;
             buttonDeleteQuestion.Font = new Font("Segoe UI", 12F);
+            buttonDeleteQuestion.ForeColor = Color.White;
             buttonDeleteQuestion.Location = new Point(378, 374);
             buttonDeleteQuestion.Name = "buttonDeleteQuestion";
             buttonDeleteQuestion.Size = new Size(162, 36);
@@ -247,8 +272,11 @@
             // 
             // buttonAddQuestion
             // 
-            buttonAddQuestion.BackColor = Color.White;
+            buttonAddQuestion.BackColor = Color.FromArgb(150, 73, 244);
+            buttonAddQuestion.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonAddQuestion.FlatStyle = FlatStyle.Flat;
             buttonAddQuestion.Font = new Font("Segoe UI", 12F);
+            buttonAddQuestion.ForeColor = Color.White;
             buttonAddQuestion.Location = new Point(378, 332);
             buttonAddQuestion.Name = "buttonAddQuestion";
             buttonAddQuestion.Size = new Size(162, 36);
@@ -271,6 +299,7 @@
             // 
             radioButtonThirdLevel.AutoSize = true;
             radioButtonThirdLevel.Font = new Font("Segoe UI", 12F);
+            radioButtonThirdLevel.ForeColor = Color.White;
             radioButtonThirdLevel.Location = new Point(24, 66);
             radioButtonThirdLevel.Name = "radioButtonThirdLevel";
             radioButtonThirdLevel.Size = new Size(100, 25);
@@ -283,6 +312,7 @@
             // 
             radioButtonSecondLevel.AutoSize = true;
             radioButtonSecondLevel.Font = new Font("Segoe UI", 12F);
+            radioButtonSecondLevel.ForeColor = Color.White;
             radioButtonSecondLevel.Location = new Point(24, 39);
             radioButtonSecondLevel.Name = "radioButtonSecondLevel";
             radioButtonSecondLevel.Size = new Size(100, 25);
@@ -295,6 +325,7 @@
             // 
             radioButtonFirstLevel.AutoSize = true;
             radioButtonFirstLevel.Font = new Font("Segoe UI", 12F);
+            radioButtonFirstLevel.ForeColor = Color.White;
             radioButtonFirstLevel.Location = new Point(24, 12);
             radioButtonFirstLevel.Name = "radioButtonFirstLevel";
             radioButtonFirstLevel.Size = new Size(100, 25);
@@ -305,8 +336,11 @@
             // 
             // buttonCreate
             // 
-            buttonCreate.BackColor = Color.White;
+            buttonCreate.BackColor = Color.FromArgb(150, 73, 244);
+            buttonCreate.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonCreate.FlatStyle = FlatStyle.Flat;
             buttonCreate.Font = new Font("Segoe UI", 14F);
+            buttonCreate.ForeColor = Color.White;
             buttonCreate.Location = new Point(581, 354);
             buttonCreate.Name = "buttonCreate";
             buttonCreate.Size = new Size(212, 56);
@@ -319,6 +353,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(601, 22);
             label1.Name = "label1";
             label1.Size = new Size(172, 25);
@@ -327,7 +362,9 @@
             // 
             // textBoxName
             // 
+            textBoxName.BackColor = Color.FromArgb(25, 27, 39);
             textBoxName.Font = new Font("Segoe UI", 14F);
+            textBoxName.ForeColor = Color.White;
             textBoxName.Location = new Point(601, 60);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(179, 32);
@@ -337,6 +374,7 @@
             // 
             labelLevel.AutoSize = true;
             labelLevel.Font = new Font("Segoe UI", 14F);
+            labelLevel.ForeColor = Color.White;
             labelLevel.Location = new Point(643, 179);
             labelLevel.Name = "labelLevel";
             labelLevel.Size = new Size(90, 25);
@@ -347,7 +385,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(25, 27, 39);
             ClientSize = new Size(800, 450);
             Controls.Add(labelLevel);
             Controls.Add(textBoxName);

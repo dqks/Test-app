@@ -32,7 +32,6 @@
             nextButton = new Button();
             labelChooseSubject = new Label();
             labelChooseLevel = new Label();
-            labelError = new Label();
             comboBoxSubjects = new ComboBox();
             addTestButton = new Button();
             testToolTip = new ToolTip(components);
@@ -45,7 +44,9 @@
             // 
             // nextButton
             // 
-            nextButton.BackColor = Color.White;
+            nextButton.BackColor = Color.FromArgb(150, 73, 244);
+            nextButton.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            nextButton.FlatStyle = FlatStyle.Flat;
             nextButton.Font = new Font("Segoe UI", 12F);
             nextButton.Location = new Point(323, 339);
             nextButton.Name = "nextButton";
@@ -75,19 +76,12 @@
             labelChooseLevel.TabIndex = 6;
             labelChooseLevel.Text = "Выберите уровень:";
             // 
-            // labelError
-            // 
-            labelError.AutoSize = true;
-            labelError.Font = new Font("Segoe UI", 12F);
-            labelError.Location = new Point(303, 397);
-            labelError.Name = "labelError";
-            labelError.Size = new Size(0, 21);
-            labelError.TabIndex = 7;
-            // 
             // comboBoxSubjects
             // 
-            comboBoxSubjects.BackColor = Color.White;
+            comboBoxSubjects.BackColor = Color.FromArgb(25, 27, 39);
+            comboBoxSubjects.FlatStyle = FlatStyle.Flat;
             comboBoxSubjects.Font = new Font("Segoe UI", 12F);
+            comboBoxSubjects.ForeColor = Color.White;
             comboBoxSubjects.FormattingEnabled = true;
             comboBoxSubjects.Location = new Point(327, 95);
             comboBoxSubjects.Name = "comboBoxSubjects";
@@ -96,11 +90,14 @@
             // 
             // addTestButton
             // 
-            addTestButton.BackColor = Color.White;
-            addTestButton.Font = new Font("Segoe UI", 14F);
-            addTestButton.Location = new Point(749, 12);
+            addTestButton.BackColor = Color.FromArgb(150, 73, 244);
+            addTestButton.BackgroundImageLayout = ImageLayout.None;
+            addTestButton.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            addTestButton.FlatStyle = FlatStyle.Flat;
+            addTestButton.Font = new Font("Segoe UI", 16F);
+            addTestButton.Location = new Point(719, 12);
             addTestButton.Name = "addTestButton";
-            addTestButton.Size = new Size(39, 38);
+            addTestButton.Size = new Size(69, 54);
             addTestButton.TabIndex = 8;
             addTestButton.Text = "➕";
             testToolTip.SetToolTip(addTestButton, "Создать новый тест");
@@ -157,15 +154,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(25, 27, 39);
             ClientSize = new Size(800, 450);
             Controls.Add(addTestButton);
             Controls.Add(comboBoxSubjects);
             Controls.Add(panelLevels);
-            Controls.Add(labelError);
             Controls.Add(labelChooseLevel);
             Controls.Add(labelChooseSubject);
             Controls.Add(nextButton);
+            ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -185,7 +182,6 @@
         private Label labelChooseSubject;
         private CheckedListBox checkedListBox1;
         private Label labelChooseLevel;
-        private Label labelError;
         private ComboBox comboBoxSubjects;
         private Button addTestButton;
         private ToolTip testToolTip;

@@ -96,7 +96,7 @@ namespace WinFormsApp1
 			{
 				//Создание вкладки вопроса
 				TabPage newTabPage = new TabPage();
-				newTabPage.BackColor = Color.White;
+                newTabPage.BackColor = Color.FromArgb(25, 27, 39);
 				newTabPage.Text = questionNum++ + " вопрос";
 
 				//Создание кнопки "Далее"
@@ -106,16 +106,24 @@ namespace WinFormsApp1
 				backButton.Font = new Font("Segoe UI", 12F);
 				backButton.Location = new Point(45, 335);
 				backButton.Size = new Size(93, 34);
-				newTabPage.Controls.Add(backButton);
+                backButton.BackColor = Color.FromArgb(150, 73, 244);
+                backButton.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+                backButton.FlatStyle = FlatStyle.Flat;
+				backButton.ForeColor = Color.White;
+                newTabPage.Controls.Add(backButton);
 
-				//Создание кнопки "Назад"
-				Button nextButton = new Button();
+                //Создание кнопки "Назад"
+                Button nextButton = new Button();
 				nextButton.Click += nextButton_Click;
 				nextButton.Text = "Далее";
 				nextButton.Font = new Font("Segoe UI", 12F);
 				nextButton.Location = new Point(184, 335);
 				nextButton.Size = new Size(93, 34);
-				newTabPage.Controls.Add(nextButton);
+                nextButton.BackColor = Color.FromArgb(150, 73, 244);
+                nextButton.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+                nextButton.FlatStyle = FlatStyle.Flat;
+                nextButton.ForeColor = Color.White;
+                newTabPage.Controls.Add(nextButton);
 
 				//Создание текста вопроса
 				System.Windows.Forms.Label questionLabel = new System.Windows.Forms.Label();
@@ -123,7 +131,8 @@ namespace WinFormsApp1
 				questionLabel.Font = new Font("Segoe UI", 10F);
 				questionLabel.Location = new Point(45, 31);
 				questionLabel.Size = new Size(498, 50);
-				newTabPage.Controls.Add(questionLabel);
+                questionLabel.ForeColor = Color.White;
+                newTabPage.Controls.Add(questionLabel);
 
 				//Задаем вопросы
 
@@ -149,7 +158,8 @@ namespace WinFormsApp1
 					answerVariant.Font = new Font("Segoe UI", 10F);
 					answerVariant.Location = new Point(45, startAnswerPos);
 					answerVariant.Size = new Size(498, 50);
-					answerVariant.Text = variants.Current.ID.Replace("TRUE", "");
+                    answerVariant.ForeColor =Color.White;
+                    answerVariant.Text = variants.Current.ID.Replace("TRUE", "");
 					newTabPage.Controls.Add(answerVariant);
 
 					startAnswerPos += distanceBetweenAnswers;
