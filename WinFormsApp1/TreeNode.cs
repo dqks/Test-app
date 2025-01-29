@@ -1,4 +1,4 @@
-﻿class TreeNode : IEnumerable<TreeNode>
+﻿public class TreeNode : IEnumerable<TreeNode>
 {
     private readonly Dictionary<string, TreeNode> _children =
                                         new Dictionary<string, TreeNode>();
@@ -9,7 +9,7 @@
 
     public static void addTest (TreeNode test)
     {
-        test.Add(test);
+        tests.Add(test);
     }
 
     public TreeNode(string id)
@@ -486,7 +486,7 @@
                                 {
                                     new TreeNode("Тело запроса"),
                                     new TreeNode("TRUEОбъект Response"),
-                                    new TreeNode("Тело запроса в виде"),
+                                    new TreeNode("Тело запроса в виде JSON"),
                                 } ,
                                 new TreeNode("CHECKBOXКакие есть виды пропоганации события")
                                 {
@@ -510,7 +510,7 @@
                                     new TreeNode("Перехват"),
                                     new TreeNode("TRUEДелегирование"),
                                 } ,
-                                new TreeNode("CHECKBOXКак называется процесс доступа к переменным до их определения?")
+                                new TreeNode("CHECKBOXВыберите верные утверждения про события")
                                 {
                                     new TreeNode("TRUEПри быстром движении мыши события НЕ будут возникать на промежуточных элементах"),
                                     new TreeNode("При быстром движении мыши события будут возникать на промежуточных элементах"),

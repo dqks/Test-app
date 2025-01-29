@@ -87,7 +87,11 @@ namespace WinFormsApp1
             Controls.Add(resultButton);
             Controls.Add(mainInfoLabel);
             Controls.Add(testingTab);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Form3";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form3";
             FormClosing += Form3_FormClosing;
             Load += Form3_Load;

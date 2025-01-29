@@ -17,6 +17,7 @@ namespace WinFormsApp1
 	{
 		private string subject;
 		private string level;
+		private TreeNode child;
 		private ArrayList rightAnswers = new ArrayList();
 		private bool isClosedByUser = true;
 		public Form3()
@@ -53,29 +54,39 @@ namespace WinFormsApp1
             }
 		}
 
-		public Form3(string subject, string level)
+		public Form3(string subject, string level, TreeNode child)
 		{
 			InitializeComponent();
 			this.subject = subject;
 			this.level = level;
+			this.child = child;
 		}
 
 		private void Form3_Load(object sender, EventArgs e)
 		{
 			mainInfoLabel.Text = subject + ", " + level;
 
-            List<TreeNode> subjects = TreeNode.makeTreeNode(); //Получаем массив из всех деревьев
-			TreeNode child = new TreeNode("");
-			foreach (TreeNode node in subjects)
-			{
-				if (node.ID == subject)
-				{
-					child = node.GetChild(level);// Получаем блок вопросов по ключу
-												 // уровня сложности по выбранному предмету
-				}
-			}
+   //         List<TreeNode> subjects = TreeNode.tests; //Получаем массив из всех деревьев
+   //         TreeNode child = new TreeNode("");
 
-			IEnumerator<TreeNode> questions = child.GetEnumerator(); //получаем все вопросы
+   //         try
+   //         {
+   //             foreach (TreeNode node in subjects)
+   //             {
+   //                 if (node.ID == subject)
+   //                 {
+   //                     child = node.GetChild(level);// Получаем блок вопросов по ключу
+   //                                                  // уровня сложности по выбранному предмету
+   //                 }
+   //             }
+   //         }
+			//catch
+			//{
+			//	return;
+			//}
+
+
+            IEnumerator<TreeNode> questions = child.GetEnumerator(); //получаем все вопросы
 			TreeNode answers;
 
 			int questionNum = 1;
@@ -245,7 +256,8 @@ namespace WinFormsApp1
 				}
 			}
 
-			double result = Math.Round(countСheckedRightAnswers * 100.0 / rightAnswers.Count);
+
+            double result = Math.Round(countСheckedRightAnswers * 100.0 / rightAnswers.Count);
 			int grade = 0;
 
 			if (result < 50)

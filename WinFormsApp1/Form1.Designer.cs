@@ -110,8 +110,12 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Form1";
-            Text = "Расскажите о себе";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Ввод информации";
             ResumeLayout(false);
             PerformLayout();
         }

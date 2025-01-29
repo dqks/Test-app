@@ -12,31 +12,58 @@ namespace WinFormsApp1
 {
     public partial class Form2 : Form
     {
-        public Form2 form;
+
         public Form2()
         {
             InitializeComponent();
+
+            if (comboBoxSubjects.Items.Count == 0)
+            {
+                foreach (var node in TreeNode.tests)
+                {
+                    comboBoxSubjects.Items.Add(node.ID);
+                }
+            }
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public Form2(TreeNode test)
+        {
+            InitializeComponent();
+
+            if (comboBoxSubjects.Items.Count == 0)
+            {
+                foreach (var node in TreeNode.tests)
+                {
+                    comboBoxSubjects.Items.Add(node.ID);
+
+                }
+            }
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
         {
             string? subject;
-            if (listBox1.SelectedItem != null)
+            if (comboBoxSubjects.SelectedItem != null)
             {
-                subject = listBox1.SelectedItem.ToString();
+                subject = comboBoxSubjects.SelectedItem.ToString();
 
             }
             else
             {
-                label3.Text = "Выберите нужный предмет";
+                MessageBox.Show(
+                    "Выберите нужный предмет",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
             string level = "";
 
-            for (int i = 0; i < panel1.Controls.Count; i++)
+            for (int i = 0; i < panelLevels.Controls.Count; i++)
             {
-                RadioButton radio = (RadioButton)panel1.Controls[i];
+                RadioButton radio = (RadioButton)panelLevels.Controls[i];
                 if (radio.Checked == true)
                 {
                     level = radio.Text;
@@ -45,13 +72,44 @@ namespace WinFormsApp1
 
             if (level == "")
             {
-                label3.Text = "Выберите нужный уровень";
+                MessageBox.Show(
+                    "Выберите нужный уровень",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
-            Form3 form3 = new Form3(subject, level);
-            form3.Show();
-            this.Close();
+            List<TreeNode> subjects = TreeNode.tests; //Получаем массив из всех деревьев
+            TreeNode child = new TreeNode("");
+
+            try
+            {
+                foreach (TreeNode node in subjects)
+                {
+                    if (node.ID == subject)
+                    {
+                        child = node.GetChild(level);// Получаем блок вопросов по ключу
+                                                     // уровня сложности по выбранному предмету
+                    }
+                }
+
+                Form3 form3 = new Form3(subject, level, child);
+                form3.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Выбранного теста не существует",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
+
+
+
         }
 
         private void addTestButton_Click(object sender, EventArgs e)
@@ -63,5 +121,13 @@ namespace WinFormsApp1
     }
 }
 
+/*
+ 
+ ООП
+C#
+C++
+JavaScript
+ 
+ */
 
 //Создать форму для создания вопросов к тесту, предметов и т.д.
