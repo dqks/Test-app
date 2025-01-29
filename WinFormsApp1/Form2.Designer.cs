@@ -39,7 +39,6 @@
             radioButtonSecondLevel = new RadioButton();
             radioButtonThirdLevel = new RadioButton();
             panelLevels = new Panel();
-            buttonCheckResults = new Button();
             panelLevels.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +47,7 @@
             nextButton.BackColor = Color.FromArgb(150, 73, 244);
             nextButton.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
             nextButton.FlatStyle = FlatStyle.Flat;
-            nextButton.Font = new Font("Segoe UI", 14F);
+            nextButton.Font = new Font("Segoe UI", 12F);
             nextButton.Location = new Point(323, 339);
             nextButton.Name = "nextButton";
             nextButton.Size = new Size(155, 40);
@@ -60,20 +59,20 @@
             // labelChooseSubject
             // 
             labelChooseSubject.AutoSize = true;
-            labelChooseSubject.Font = new Font("Segoe UI", 14F);
-            labelChooseSubject.Location = new Point(279, 20);
+            labelChooseSubject.Font = new Font("Segoe UI", 12F);
+            labelChooseSubject.Location = new Point(303, 19);
             labelChooseSubject.Name = "labelChooseSubject";
-            labelChooseSubject.Size = new Size(253, 25);
+            labelChooseSubject.Size = new Size(210, 21);
             labelChooseSubject.TabIndex = 2;
             labelChooseSubject.Text = "Выберите нужный предмет:";
             // 
             // labelChooseLevel
             // 
             labelChooseLevel.AutoSize = true;
-            labelChooseLevel.Font = new Font("Segoe UI", 14F);
-            labelChooseLevel.Location = new Point(310, 160);
+            labelChooseLevel.Font = new Font("Segoe UI", 12F);
+            labelChooseLevel.Location = new Point(327, 167);
             labelChooseLevel.Name = "labelChooseLevel";
-            labelChooseLevel.Size = new Size(178, 25);
+            labelChooseLevel.Size = new Size(146, 21);
             labelChooseLevel.TabIndex = 6;
             labelChooseLevel.Text = "Выберите уровень:";
             // 
@@ -81,12 +80,12 @@
             // 
             comboBoxSubjects.BackColor = Color.FromArgb(25, 27, 39);
             comboBoxSubjects.FlatStyle = FlatStyle.Flat;
-            comboBoxSubjects.Font = new Font("Segoe UI", 14F);
+            comboBoxSubjects.Font = new Font("Segoe UI", 12F);
             comboBoxSubjects.ForeColor = Color.White;
             comboBoxSubjects.FormattingEnabled = true;
             comboBoxSubjects.Location = new Point(327, 95);
             comboBoxSubjects.Name = "comboBoxSubjects";
-            comboBoxSubjects.Size = new Size(146, 33);
+            comboBoxSubjects.Size = new Size(146, 29);
             comboBoxSubjects.TabIndex = 0;
             // 
             // addTestButton
@@ -108,10 +107,10 @@
             // radioButtonFirstLevel
             // 
             radioButtonFirstLevel.AutoSize = true;
-            radioButtonFirstLevel.Font = new Font("Segoe UI", 14F);
-            radioButtonFirstLevel.Location = new Point(14, 9);
+            radioButtonFirstLevel.Font = new Font("Segoe UI", 12F);
+            radioButtonFirstLevel.Location = new Point(24, 12);
             radioButtonFirstLevel.Name = "radioButtonFirstLevel";
-            radioButtonFirstLevel.Size = new Size(117, 29);
+            radioButtonFirstLevel.Size = new Size(100, 25);
             radioButtonFirstLevel.TabIndex = 1;
             radioButtonFirstLevel.TabStop = true;
             radioButtonFirstLevel.Text = "1 уровень";
@@ -120,10 +119,10 @@
             // radioButtonSecondLevel
             // 
             radioButtonSecondLevel.AutoSize = true;
-            radioButtonSecondLevel.Font = new Font("Segoe UI", 14F);
-            radioButtonSecondLevel.Location = new Point(14, 36);
+            radioButtonSecondLevel.Font = new Font("Segoe UI", 12F);
+            radioButtonSecondLevel.Location = new Point(24, 39);
             radioButtonSecondLevel.Name = "radioButtonSecondLevel";
-            radioButtonSecondLevel.Size = new Size(117, 29);
+            radioButtonSecondLevel.Size = new Size(100, 25);
             radioButtonSecondLevel.TabIndex = 2;
             radioButtonSecondLevel.TabStop = true;
             radioButtonSecondLevel.Text = "2 уровень";
@@ -132,10 +131,10 @@
             // radioButtonThirdLevel
             // 
             radioButtonThirdLevel.AutoSize = true;
-            radioButtonThirdLevel.Font = new Font("Segoe UI", 14F);
-            radioButtonThirdLevel.Location = new Point(14, 63);
+            radioButtonThirdLevel.Font = new Font("Segoe UI", 12F);
+            radioButtonThirdLevel.Location = new Point(24, 66);
             radioButtonThirdLevel.Name = "radioButtonThirdLevel";
-            radioButtonThirdLevel.Size = new Size(117, 29);
+            radioButtonThirdLevel.Size = new Size(100, 25);
             radioButtonThirdLevel.TabIndex = 3;
             radioButtonThirdLevel.TabStop = true;
             radioButtonThirdLevel.Text = "3 уровень";
@@ -151,28 +150,12 @@
             panelLevels.Size = new Size(146, 100);
             panelLevels.TabIndex = 1;
             // 
-            // buttonCheckResults
-            // 
-            buttonCheckResults.BackColor = Color.FromArgb(150, 73, 244);
-            buttonCheckResults.BackgroundImageLayout = ImageLayout.None;
-            buttonCheckResults.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
-            buttonCheckResults.FlatStyle = FlatStyle.Flat;
-            buttonCheckResults.Font = new Font("Segoe UI", 14F);
-            buttonCheckResults.Location = new Point(12, 12);
-            buttonCheckResults.Name = "buttonCheckResults";
-            buttonCheckResults.Size = new Size(127, 41);
-            buttonCheckResults.TabIndex = 9;
-            buttonCheckResults.Text = "Результаты";
-            testToolTip.SetToolTip(buttonCheckResults, "Создать новый тест");
-            buttonCheckResults.UseVisualStyleBackColor = false;
-            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 27, 39);
             ClientSize = new Size(800, 450);
-            Controls.Add(buttonCheckResults);
             Controls.Add(addTestButton);
             Controls.Add(comboBoxSubjects);
             Controls.Add(panelLevels);
@@ -206,6 +189,5 @@
         private RadioButton radioButtonSecondLevel;
         private RadioButton radioButtonThirdLevel;
         private Panel panelLevels;
-        private Button buttonCheckResults;
     }
 }
