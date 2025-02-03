@@ -270,7 +270,8 @@ namespace WinFormsApp1
             double result = Math.Round(countСheckedRightAnswers * 100.0 / rightAnswers.Count);
 			int grade = 0;
 
-			if (result < 50)
+
+            if (result < 50)
 			{
 				grade = 2;
 			} else if (result >= 50 && result <= 74)
@@ -283,6 +284,9 @@ namespace WinFormsApp1
 			{
 				grade = 5;
 			}
+
+            TestResults.AddResult(subject, level, result, grade);
+
 
             MessageBox.Show(
 				"Процент правильных ответов - " + result + "%" + "\nВаша оценка " + grade,
