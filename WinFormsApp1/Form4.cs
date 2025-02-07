@@ -29,7 +29,7 @@ namespace WinFormsApp1
 		{
 			if (isClosedByUser == false)
 			{
-				Form2 form2 = new Form2(testWrapper);
+				Form2 form2 = new Form2();
 				form2.Show();
 			}
 			else
@@ -190,7 +190,7 @@ namespace WinFormsApp1
 
 			checkBoxIsTrueFirst.AutoSize = true;
 			checkBoxIsTrueFirst.Font = new Font("Segoe UI", 12F);
-			checkBoxIsTrueFirst.Location = new Point(398, 92);
+			checkBoxIsTrueFirst.Location = new Point(525, 92);
 			checkBoxIsTrueFirst.Name = "checkBoxIsTrueFirst";
 			checkBoxIsTrueFirst.Size = new Size(15, 14);
 			checkBoxIsTrueFirst.TabIndex = 9;
@@ -200,7 +200,7 @@ namespace WinFormsApp1
 
 			checkBoxIsTrueSecond.AutoSize = true;
 			checkBoxIsTrueSecond.Font = new Font("Segoe UI", 12F);
-			checkBoxIsTrueSecond.Location = new Point(398, 138);
+			checkBoxIsTrueSecond.Location = new Point(525, 138);
 			checkBoxIsTrueSecond.Name = "checkBoxIsTrueSecond";
 			checkBoxIsTrueSecond.Size = new Size(15, 14);
 			checkBoxIsTrueSecond.TabIndex = 10;
@@ -210,7 +210,7 @@ namespace WinFormsApp1
 
 			checkBoxIsTrueThird.AutoSize = true;
 			checkBoxIsTrueThird.Font = new Font("Segoe UI", 12F);
-			checkBoxIsTrueThird.Location = new Point(398, 182);
+			checkBoxIsTrueThird.Location = new Point(525, 182);
 			checkBoxIsTrueThird.Name = "checkBoxIsTrueThird";
 			checkBoxIsTrueThird.Size = new Size(15, 14);
 			checkBoxIsTrueThird.TabIndex = 11;
@@ -220,7 +220,7 @@ namespace WinFormsApp1
 
 			checkBoxIsTrueFourth.AutoSize = true;
 			checkBoxIsTrueFourth.Font = new Font("Segoe UI", 12F);
-			checkBoxIsTrueFourth.Location = new Point(398, 224);
+			checkBoxIsTrueFourth.Location = new Point(525, 224);
 			checkBoxIsTrueFourth.Name = "checkBoxIsTrueFourth";
 			checkBoxIsTrueFourth.Size = new Size(15, 14);
 			checkBoxIsTrueFourth.TabIndex = 12;
@@ -230,7 +230,7 @@ namespace WinFormsApp1
 
 			checkBoxIsTrueFifth.AutoSize = true;
 			checkBoxIsTrueFifth.Font = new Font("Segoe UI", 12F);
-			checkBoxIsTrueFifth.Location = new Point(398, 263);
+			checkBoxIsTrueFifth.Location = new Point(525, 263);
 			checkBoxIsTrueFifth.Name = "checkBoxIsTrueFifth";
 			checkBoxIsTrueFifth.Size = new Size(15, 14);
 			checkBoxIsTrueFifth.TabIndex = 13;
@@ -244,7 +244,7 @@ namespace WinFormsApp1
             textBoxQuestionName.Location = new Point(7, 12);
 			textBoxQuestionName.Name = "textBoxQuestionName";
 			textBoxQuestionName.PlaceholderText = "Вопрос";
-			textBoxQuestionName.Size = new Size(303, 29);
+			textBoxQuestionName.Size = new Size(365, 29);
 			textBoxQuestionName.TabIndex = 16;
 
 			tabPage.Controls.Add(textBoxQuestionName);
@@ -254,8 +254,9 @@ namespace WinFormsApp1
             textBoxFirstQuestion.ForeColor = Color.White;
             textBoxFirstQuestion.Location = new Point(7, 85);
 			textBoxFirstQuestion.Name = "textBoxFirstQuestion";
-			textBoxFirstQuestion.PlaceholderText = "Первый вариант ответа";
-			textBoxFirstQuestion.Size = new Size(374, 29);
+            textBoxFirstQuestion.BorderStyle = BorderStyle.FixedSingle;
+            textBoxFirstQuestion.PlaceholderText = "Первый вариант ответа";
+			textBoxFirstQuestion.Size = new Size(496, 29);
 			textBoxFirstQuestion.TabIndex = 4;
 
 			tabPage.Controls.Add(textBoxFirstQuestion);
@@ -265,8 +266,9 @@ namespace WinFormsApp1
             textBoxSecondQuestion.ForeColor = Color.White;
             textBoxSecondQuestion.Location = new Point(7, 131);
 			textBoxSecondQuestion.Name = "textBoxSecondQuestion";
-			textBoxSecondQuestion.PlaceholderText = "Второй вариант ответа";
-			textBoxSecondQuestion.Size = new Size(374, 29);
+            textBoxSecondQuestion.BorderStyle = BorderStyle.FixedSingle;
+            textBoxSecondQuestion.PlaceholderText = "Второй вариант ответа";
+			textBoxSecondQuestion.Size = new Size(496, 29);
 			textBoxSecondQuestion.TabIndex = 5;
 
 			tabPage.Controls.Add(textBoxSecondQuestion);
@@ -276,8 +278,9 @@ namespace WinFormsApp1
             textBoxThirdQuestion.ForeColor = Color.White;
             textBoxThirdQuestion.Location = new Point(7, 175);
 			textBoxThirdQuestion.Name = "textBoxThirdQuestion";
-			textBoxThirdQuestion.PlaceholderText = "Третий вариант ответа";
-			textBoxThirdQuestion.Size = new Size(374, 29);
+            textBoxThirdQuestion.BorderStyle = BorderStyle.FixedSingle;
+            textBoxThirdQuestion.PlaceholderText = "Третий вариант ответа";
+			textBoxThirdQuestion.Size = new Size(496, 29);
 			textBoxThirdQuestion.TabIndex = 6;
 
 			tabPage.Controls.Add(textBoxThirdQuestion);
@@ -286,9 +289,10 @@ namespace WinFormsApp1
             textBoxFourthQuestion.BackColor = Color.FromArgb(25, 27, 39);
             textBoxFourthQuestion.ForeColor = Color.White;
             textBoxFourthQuestion.Location = new Point(7, 217);
-			textBoxFourthQuestion.Name = "textBoxFourthQuestion";
+            textBoxFourthQuestion.BorderStyle = BorderStyle.FixedSingle;
+            textBoxFourthQuestion.Name = "textBoxFourthQuestion";
 			textBoxFourthQuestion.PlaceholderText = "Четвертый вариант ответа";
-			textBoxFourthQuestion.Size = new Size(374, 29);
+			textBoxFourthQuestion.Size = new Size(496, 29);
 			textBoxFourthQuestion.TabIndex = 7;
 
 			tabPage.Controls.Add(textBoxFourthQuestion);
@@ -297,9 +301,10 @@ namespace WinFormsApp1
             textBoxFifthQuestion.BackColor = Color.FromArgb(25, 27, 39);
             textBoxFifthQuestion.ForeColor = Color.White;
             textBoxFifthQuestion.Location = new Point(7, 256);
-			textBoxFifthQuestion.Name = "textBoxFifthQuestion";
+            textBoxFifthQuestion.BorderStyle = BorderStyle.FixedSingle;
+            textBoxFifthQuestion.Name = "textBoxFifthQuestion";
 			textBoxFifthQuestion.PlaceholderText = "Пятый вариант ответа";
-			textBoxFifthQuestion.Size = new Size(374, 29);
+			textBoxFifthQuestion.Size = new Size(496, 29);
 			textBoxFifthQuestion.TabIndex = 8;
 
 			tabPage.Controls.Add(textBoxFifthQuestion);
@@ -526,11 +531,14 @@ namespace WinFormsApp1
 
 			TreeNode sameSubject = new TreeNode("");
 
+			int testPosition = 0;
+
             foreach (var node in TreeNode.tests)
             {
                 if (textBoxName.Text == node.ID)
                 {
 					sameSubject = node;
+                    testPosition = TreeNode.tests.IndexOf(sameSubject);
                 }
             }
 
@@ -540,7 +548,7 @@ namespace WinFormsApp1
             } else
 			{
 				TreeNode.tests.Remove(sameSubject);
-                TreeNode.addTest(testWrapper);
+                TreeNode.addTest(testWrapper, testPosition);
             }
 
             isClosedByUser = false;

@@ -53,11 +53,11 @@ namespace WinFormsApp1
             resultButton.BackColor = Color.FromArgb(150, 73, 244);
             resultButton.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
             resultButton.FlatStyle = FlatStyle.Flat;
-            resultButton.Font = new Font("Segoe UI", 14F);
+            resultButton.Font = new Font("Segoe UI", 16F);
             resultButton.ForeColor = Color.White;
             resultButton.Location = new Point(589, 338);
             resultButton.Name = "resultButton";
-            resultButton.Size = new Size(199, 53);
+            resultButton.Size = new Size(199, 61);
             resultButton.TabIndex = 3;
             resultButton.Text = "Завершить тест";
             resultButton.UseVisualStyleBackColor = false;

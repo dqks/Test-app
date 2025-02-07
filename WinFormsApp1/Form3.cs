@@ -66,26 +66,6 @@ namespace WinFormsApp1
 		{
 			mainInfoLabel.Text = subject + ", " + level;
 
-   //         List<TreeNode> subjects = TreeNode.tests; //Получаем массив из всех деревьев
-   //         TreeNode child = new TreeNode("");
-
-   //         try
-   //         {
-   //             foreach (TreeNode node in subjects)
-   //             {
-   //                 if (node.ID == subject)
-   //                 {
-   //                     child = node.GetChild(level);// Получаем блок вопросов по ключу
-   //                                                  // уровня сложности по выбранному предмету
-   //                 }
-   //             }
-   //         }
-			//catch
-			//{
-			//	return;
-			//}
-
-
             IEnumerator<TreeNode> questions = child.GetEnumerator(); //получаем все вопросы
 			TreeNode answers;
 

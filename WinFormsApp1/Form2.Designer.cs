@@ -36,11 +36,11 @@
             addTestButton = new Button();
             testToolTip = new ToolTip(components);
             buttonResults = new Button();
+            buttonEditTest = new Button();
             radioButtonFirstLevel = new RadioButton();
             radioButtonSecondLevel = new RadioButton();
             radioButtonThirdLevel = new RadioButton();
             panelLevels = new Panel();
-            buttonEditTest = new Button();
             panelLevels.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,9 +52,10 @@
             nextButton.Font = new Font("Segoe UI", 16F);
             nextButton.Location = new Point(325, 339);
             nextButton.Name = "nextButton";
-            nextButton.Size = new Size(155, 40);
+            nextButton.Size = new Size(155, 51);
             nextButton.TabIndex = 4;
             nextButton.Text = "Далее";
+            testToolTip.SetToolTip(nextButton, "Пройти тест");
             nextButton.UseVisualStyleBackColor = false;
             nextButton.Click += nextButton_Click;
             // 
@@ -118,9 +119,25 @@
             buttonResults.Size = new Size(141, 54);
             buttonResults.TabIndex = 9;
             buttonResults.Text = "Результаты";
-            testToolTip.SetToolTip(buttonResults, "Создать новый тест");
+            testToolTip.SetToolTip(buttonResults, "Просмотреть результаты");
             buttonResults.UseVisualStyleBackColor = false;
             buttonResults.Click += buttonResults_Click;
+            // 
+            // buttonEditTest
+            // 
+            buttonEditTest.BackColor = Color.FromArgb(150, 73, 244);
+            buttonEditTest.BackgroundImageLayout = ImageLayout.None;
+            buttonEditTest.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
+            buttonEditTest.FlatStyle = FlatStyle.Flat;
+            buttonEditTest.Font = new Font("Segoe UI", 16F);
+            buttonEditTest.Location = new Point(719, 79);
+            buttonEditTest.Name = "buttonEditTest";
+            buttonEditTest.Size = new Size(69, 54);
+            buttonEditTest.TabIndex = 10;
+            buttonEditTest.Text = "EDIT";
+            testToolTip.SetToolTip(buttonEditTest, "Редактировать выбранный тест");
+            buttonEditTest.UseVisualStyleBackColor = false;
+            buttonEditTest.Click += buttonEditTest_Click;
             // 
             // radioButtonFirstLevel
             // 
@@ -167,22 +184,6 @@
             panelLevels.Name = "panelLevels";
             panelLevels.Size = new Size(146, 114);
             panelLevels.TabIndex = 1;
-            // 
-            // buttonEditTest
-            // 
-            buttonEditTest.BackColor = Color.FromArgb(150, 73, 244);
-            buttonEditTest.BackgroundImageLayout = ImageLayout.None;
-            buttonEditTest.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
-            buttonEditTest.FlatStyle = FlatStyle.Flat;
-            buttonEditTest.Font = new Font("Segoe UI", 16F);
-            buttonEditTest.Location = new Point(719, 79);
-            buttonEditTest.Name = "buttonEditTest";
-            buttonEditTest.Size = new Size(69, 54);
-            buttonEditTest.TabIndex = 10;
-            buttonEditTest.Text = "EDIT";
-            testToolTip.SetToolTip(buttonEditTest, "Создать новый тест");
-            buttonEditTest.UseVisualStyleBackColor = false;
-            buttonEditTest.Click += buttonEditTest_Click;
             // 
             // Form2
             // 

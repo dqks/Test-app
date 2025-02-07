@@ -40,7 +40,6 @@ namespace WinFormsApp1
                 Label labelGrade = new Label();
                 Label labelSubjectLevel = new Label();
 
-
                 panelDelimeterNew.Dock = DockStyle.Top;
                 panelDelimeterNew.Name = "panelDelimeter" + index;
                 panelDelimeterNew.Size = new Size(780, 18);

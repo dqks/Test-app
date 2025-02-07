@@ -51,7 +51,7 @@
             radioButtonSecondLevel = new RadioButton();
             radioButtonFirstLevel = new RadioButton();
             buttonCreate = new Button();
-            label1 = new Label();
+            labelTestName = new Label();
             textBoxName = new TextBox();
             labelLevel = new Label();
             testingTab.SuspendLayout();
@@ -101,7 +101,7 @@
             textBoxQuestionName.Location = new Point(7, 12);
             textBoxQuestionName.Name = "textBoxQuestionName";
             textBoxQuestionName.PlaceholderText = "Вопрос";
-            textBoxQuestionName.Size = new Size(303, 29);
+            textBoxQuestionName.Size = new Size(365, 29);
             textBoxQuestionName.TabIndex = 16;
             // 
             // buttonNextQuestion
@@ -139,7 +139,7 @@
             checkBoxIsTrueFirst.AutoSize = true;
             checkBoxIsTrueFirst.Font = new Font("Segoe UI", 12F);
             checkBoxIsTrueFirst.ForeColor = Color.Black;
-            checkBoxIsTrueFirst.Location = new Point(398, 92);
+            checkBoxIsTrueFirst.Location = new Point(525, 92);
             checkBoxIsTrueFirst.Name = "checkBoxIsTrueFirst";
             checkBoxIsTrueFirst.Size = new Size(15, 14);
             checkBoxIsTrueFirst.TabIndex = 9;
@@ -149,7 +149,7 @@
             // 
             checkBoxIsTrueSecond.AutoSize = true;
             checkBoxIsTrueSecond.Font = new Font("Segoe UI", 12F);
-            checkBoxIsTrueSecond.Location = new Point(398, 138);
+            checkBoxIsTrueSecond.Location = new Point(525, 138);
             checkBoxIsTrueSecond.Name = "checkBoxIsTrueSecond";
             checkBoxIsTrueSecond.Size = new Size(15, 14);
             checkBoxIsTrueSecond.TabIndex = 10;
@@ -159,7 +159,7 @@
             // 
             checkBoxIsTrueThird.AutoSize = true;
             checkBoxIsTrueThird.Font = new Font("Segoe UI", 12F);
-            checkBoxIsTrueThird.Location = new Point(398, 182);
+            checkBoxIsTrueThird.Location = new Point(525, 182);
             checkBoxIsTrueThird.Name = "checkBoxIsTrueThird";
             checkBoxIsTrueThird.Size = new Size(15, 14);
             checkBoxIsTrueThird.TabIndex = 11;
@@ -169,7 +169,7 @@
             // 
             checkBoxIsTrueFourth.AutoSize = true;
             checkBoxIsTrueFourth.Font = new Font("Segoe UI", 12F);
-            checkBoxIsTrueFourth.Location = new Point(398, 224);
+            checkBoxIsTrueFourth.Location = new Point(525, 224);
             checkBoxIsTrueFourth.Name = "checkBoxIsTrueFourth";
             checkBoxIsTrueFourth.Size = new Size(15, 14);
             checkBoxIsTrueFourth.TabIndex = 12;
@@ -179,7 +179,7 @@
             // 
             checkBoxIsTrueFifth.AutoSize = true;
             checkBoxIsTrueFifth.Font = new Font("Segoe UI", 12F);
-            checkBoxIsTrueFifth.Location = new Point(398, 263);
+            checkBoxIsTrueFifth.Location = new Point(525, 263);
             checkBoxIsTrueFifth.Name = "checkBoxIsTrueFifth";
             checkBoxIsTrueFifth.Size = new Size(15, 14);
             checkBoxIsTrueFifth.TabIndex = 13;
@@ -188,56 +188,61 @@
             // textBoxFirstQuestion
             // 
             textBoxFirstQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxFirstQuestion.BorderStyle = BorderStyle.FixedSingle;
             textBoxFirstQuestion.Font = new Font("Segoe UI", 12F);
             textBoxFirstQuestion.ForeColor = Color.White;
             textBoxFirstQuestion.Location = new Point(7, 85);
             textBoxFirstQuestion.Name = "textBoxFirstQuestion";
             textBoxFirstQuestion.PlaceholderText = "Первый вариант ответа";
-            textBoxFirstQuestion.Size = new Size(374, 29);
+            textBoxFirstQuestion.Size = new Size(496, 29);
             textBoxFirstQuestion.TabIndex = 4;
             // 
             // textBoxSecondQuestion
             // 
             textBoxSecondQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxSecondQuestion.BorderStyle = BorderStyle.FixedSingle;
             textBoxSecondQuestion.Font = new Font("Segoe UI", 12F);
             textBoxSecondQuestion.ForeColor = Color.White;
             textBoxSecondQuestion.Location = new Point(7, 131);
             textBoxSecondQuestion.Name = "textBoxSecondQuestion";
             textBoxSecondQuestion.PlaceholderText = "Второй вариант ответа";
-            textBoxSecondQuestion.Size = new Size(374, 29);
+            textBoxSecondQuestion.Size = new Size(496, 29);
             textBoxSecondQuestion.TabIndex = 5;
             // 
             // textBoxThirdQuestion
             // 
             textBoxThirdQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxThirdQuestion.BorderStyle = BorderStyle.FixedSingle;
             textBoxThirdQuestion.Font = new Font("Segoe UI", 12F);
             textBoxThirdQuestion.ForeColor = Color.White;
             textBoxThirdQuestion.Location = new Point(7, 175);
             textBoxThirdQuestion.Name = "textBoxThirdQuestion";
             textBoxThirdQuestion.PlaceholderText = "Третий вариант ответа";
-            textBoxThirdQuestion.Size = new Size(374, 29);
+            textBoxThirdQuestion.Size = new Size(496, 29);
             textBoxThirdQuestion.TabIndex = 6;
             // 
             // textBoxFourthQuestion
             // 
             textBoxFourthQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxFourthQuestion.BorderStyle = BorderStyle.FixedSingle;
             textBoxFourthQuestion.Font = new Font("Segoe UI", 12F);
             textBoxFourthQuestion.ForeColor = Color.White;
             textBoxFourthQuestion.Location = new Point(7, 217);
             textBoxFourthQuestion.Name = "textBoxFourthQuestion";
             textBoxFourthQuestion.PlaceholderText = "Четвертый вариант ответа";
-            textBoxFourthQuestion.Size = new Size(374, 29);
+            textBoxFourthQuestion.Size = new Size(496, 29);
             textBoxFourthQuestion.TabIndex = 7;
             // 
             // textBoxFifthQuestion
             // 
             textBoxFifthQuestion.BackColor = Color.FromArgb(25, 27, 39);
+            textBoxFifthQuestion.BorderStyle = BorderStyle.FixedSingle;
             textBoxFifthQuestion.Font = new Font("Segoe UI", 12F);
             textBoxFifthQuestion.ForeColor = Color.White;
             textBoxFifthQuestion.Location = new Point(7, 256);
             textBoxFifthQuestion.Name = "textBoxFifthQuestion";
             textBoxFifthQuestion.PlaceholderText = "Пятый вариант ответа";
-            textBoxFifthQuestion.Size = new Size(374, 29);
+            textBoxFifthQuestion.Size = new Size(496, 29);
             textBoxFifthQuestion.TabIndex = 8;
             // 
             // comboBoxChooseTypeOfAnswer
@@ -349,16 +354,16 @@
             buttonCreate.UseVisualStyleBackColor = false;
             buttonCreate.Click += buttonCreate_Click;
             // 
-            // label1
+            // labelTestName
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F);
-            label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(601, 22);
-            label1.Name = "label1";
-            label1.Size = new Size(172, 25);
-            label1.TabIndex = 5;
-            label1.Text = "Введите название:";
+            labelTestName.AutoSize = true;
+            labelTestName.Font = new Font("Segoe UI", 14F);
+            labelTestName.ForeColor = SystemColors.Control;
+            labelTestName.Location = new Point(601, 22);
+            labelTestName.Name = "labelTestName";
+            labelTestName.Size = new Size(172, 25);
+            labelTestName.TabIndex = 5;
+            labelTestName.Text = "Введите название:";
             // 
             // textBoxName
             // 
@@ -389,7 +394,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(labelLevel);
             Controls.Add(textBoxName);
-            Controls.Add(label1);
+            Controls.Add(labelTestName);
             Controls.Add(buttonCreate);
             Controls.Add(panelLevels);
             Controls.Add(testingTab);
@@ -418,7 +423,7 @@
         private RadioButton radioButtonSecondLevel;
         private RadioButton radioButtonFirstLevel;
         private Button buttonCreate;
-        private Label label1;
+        private Label labelTestName;
         private TextBox textBoxName;
         private Label labelLevel;
         private Button buttonAddQuestion;

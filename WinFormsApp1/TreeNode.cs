@@ -15,6 +15,11 @@ public class TreeNode : IEnumerable<TreeNode>
         tests.Add(test);
     }
 
+    public static void addTest(TreeNode test, int position)
+    {
+        tests.Insert(position, test);
+    }
+
     public TreeNode(string id)
     {
         this.ID = id;

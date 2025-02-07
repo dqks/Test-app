@@ -195,7 +195,7 @@ namespace WinFormsApp1
                     if (node.ID == subject)
                     {
                         child = node.GetChild(level);// Получаем блок вопросов по ключу
-                                                     // уровня сложности по выбранному предмету
+                                                    // уровня сложности по выбранному предмету
                     }
                 }
 
@@ -212,7 +212,7 @@ namespace WinFormsApp1
                 //Form3 form3 = new Form3(subject, level, child);
                 //form3.Show();
                 //this.Close();
-                FormEditTest formEditTest = new FormEditTest();
+                FormEditTest formEditTest = new FormEditTest(level, subject);
                 formEditTest.Show();
                 this.Close();
             }
