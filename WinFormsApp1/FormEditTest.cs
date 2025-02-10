@@ -386,7 +386,7 @@ namespace WinFormsApp1
         private void buttonDeleteTest_Click(object sender, EventArgs e)
         {
             switch (MessageBox.Show(this,
-            "Вы действительно хотите удалить уровевнь теста?",
+            "Вы действительно хотите удалить уровень теста?",
             "Подтверждение",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question))
@@ -413,6 +413,9 @@ namespace WinFormsApp1
                         }
                     }
 
+
+
+
                     foreach (TreeNode node in TreeNode.tests)
                     {
                         if (node.ID == subject)
@@ -422,14 +425,23 @@ namespace WinFormsApp1
                         } 
                         
                     }
-                    tests.Remove(testToRemove);
 
-                    tests.Insert(testPosition, wrapper);
+                    if (wrapper.Count == 0)
+                    {
+                        tests.Remove(testToRemove);
+                        this.Close();
+                        break;
+                    } else
+                    {
+                        tests.Remove(testToRemove);
 
-                    TreeNode.tests = tests;
+                        tests.Insert(testPosition, wrapper);
 
-                    this.Close();
-                    break;
+                        TreeNode.tests = tests;
+
+                        this.Close();
+                        break;
+                    }
             }
         }
 
