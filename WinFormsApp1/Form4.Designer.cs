@@ -295,19 +295,19 @@
             panelLevels.Controls.Add(radioButtonThirdLevel);
             panelLevels.Controls.Add(radioButtonSecondLevel);
             panelLevels.Controls.Add(radioButtonFirstLevel);
-            panelLevels.Location = new Point(614, 221);
+            panelLevels.Location = new Point(614, 207);
             panelLevels.Name = "panelLevels";
-            panelLevels.Size = new Size(146, 100);
+            panelLevels.Size = new Size(166, 114);
             panelLevels.TabIndex = 3;
             // 
             // radioButtonThirdLevel
             // 
             radioButtonThirdLevel.AutoSize = true;
-            radioButtonThirdLevel.Font = new Font("Segoe UI", 12F);
+            radioButtonThirdLevel.Font = new Font("Segoe UI", 16F);
             radioButtonThirdLevel.ForeColor = Color.White;
-            radioButtonThirdLevel.Location = new Point(24, 66);
+            radioButtonThirdLevel.Location = new Point(13, 71);
             radioButtonThirdLevel.Name = "radioButtonThirdLevel";
-            radioButtonThirdLevel.Size = new Size(100, 25);
+            radioButtonThirdLevel.Size = new Size(134, 34);
             radioButtonThirdLevel.TabIndex = 3;
             radioButtonThirdLevel.TabStop = true;
             radioButtonThirdLevel.Text = "3 уровень";
@@ -316,11 +316,11 @@
             // radioButtonSecondLevel
             // 
             radioButtonSecondLevel.AutoSize = true;
-            radioButtonSecondLevel.Font = new Font("Segoe UI", 12F);
+            radioButtonSecondLevel.Font = new Font("Segoe UI", 16F);
             radioButtonSecondLevel.ForeColor = Color.White;
-            radioButtonSecondLevel.Location = new Point(24, 39);
+            radioButtonSecondLevel.Location = new Point(13, 39);
             radioButtonSecondLevel.Name = "radioButtonSecondLevel";
-            radioButtonSecondLevel.Size = new Size(100, 25);
+            radioButtonSecondLevel.Size = new Size(134, 34);
             radioButtonSecondLevel.TabIndex = 2;
             radioButtonSecondLevel.TabStop = true;
             radioButtonSecondLevel.Text = "2 уровень";
@@ -329,11 +329,11 @@
             // radioButtonFirstLevel
             // 
             radioButtonFirstLevel.AutoSize = true;
-            radioButtonFirstLevel.Font = new Font("Segoe UI", 12F);
+            radioButtonFirstLevel.Font = new Font("Segoe UI", 16F);
             radioButtonFirstLevel.ForeColor = Color.White;
-            radioButtonFirstLevel.Location = new Point(24, 12);
+            radioButtonFirstLevel.Location = new Point(13, 5);
             radioButtonFirstLevel.Name = "radioButtonFirstLevel";
-            radioButtonFirstLevel.Size = new Size(100, 25);
+            radioButtonFirstLevel.Size = new Size(134, 34);
             radioButtonFirstLevel.TabIndex = 1;
             radioButtonFirstLevel.TabStop = true;
             radioButtonFirstLevel.Text = "1 уровень";
@@ -344,11 +344,11 @@
             buttonCreate.BackColor = Color.FromArgb(150, 73, 244);
             buttonCreate.FlatAppearance.BorderColor = Color.FromArgb(150, 73, 244);
             buttonCreate.FlatStyle = FlatStyle.Flat;
-            buttonCreate.Font = new Font("Segoe UI", 14F);
+            buttonCreate.Font = new Font("Segoe UI", 16F);
             buttonCreate.ForeColor = Color.White;
-            buttonCreate.Location = new Point(581, 354);
+            buttonCreate.Location = new Point(581, 360);
             buttonCreate.Name = "buttonCreate";
-            buttonCreate.Size = new Size(212, 56);
+            buttonCreate.Size = new Size(212, 78);
             buttonCreate.TabIndex = 4;
             buttonCreate.Text = "Завершить создание";
             buttonCreate.UseVisualStyleBackColor = false;
@@ -357,11 +357,11 @@
             // labelTestName
             // 
             labelTestName.AutoSize = true;
-            labelTestName.Font = new Font("Segoe UI", 14F);
+            labelTestName.Font = new Font("Segoe UI", 16F);
             labelTestName.ForeColor = SystemColors.Control;
-            labelTestName.Location = new Point(601, 22);
+            labelTestName.Location = new Point(586, 28);
             labelTestName.Name = "labelTestName";
-            labelTestName.Size = new Size(172, 25);
+            labelTestName.Size = new Size(202, 30);
             labelTestName.TabIndex = 5;
             labelTestName.Text = "Введите название:";
             // 
@@ -370,7 +370,7 @@
             textBoxName.BackColor = Color.FromArgb(25, 27, 39);
             textBoxName.Font = new Font("Segoe UI", 14F);
             textBoxName.ForeColor = Color.White;
-            textBoxName.Location = new Point(601, 60);
+            textBoxName.Location = new Point(598, 75);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(179, 32);
             textBoxName.TabIndex = 6;
@@ -378,11 +378,11 @@
             // labelLevel
             // 
             labelLevel.AutoSize = true;
-            labelLevel.Font = new Font("Segoe UI", 14F);
+            labelLevel.Font = new Font("Segoe UI", 16F);
             labelLevel.ForeColor = Color.White;
-            labelLevel.Location = new Point(643, 179);
+            labelLevel.Location = new Point(634, 164);
             labelLevel.Name = "labelLevel";
-            labelLevel.Size = new Size(90, 25);
+            labelLevel.Size = new Size(104, 30);
             labelLevel.TabIndex = 7;
             labelLevel.Text = "Уровень:";
             // 

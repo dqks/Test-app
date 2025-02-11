@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace WinFormsApp1
 {
@@ -429,6 +430,17 @@ namespace WinFormsApp1
                     if (wrapper.Count == 0)
                     {
                         tests.Remove(testToRemove);
+
+                        XmlSerializer serializer = new XmlSerializer(typeof(TreeNode));
+
+                        using (FileStream fs = new FileStream("TestsXML.xml", FileMode.OpenOrCreate))
+                        {
+                            foreach (var node in TreeNode.tests)
+                            {
+                                serializer.Serialize(fs, node);
+                            }
+                        }
+
                         this.Close();
                         break;
                     } else
@@ -438,6 +450,13 @@ namespace WinFormsApp1
                         tests.Insert(testPosition, wrapper);
 
                         TreeNode.tests = tests;
+
+                        XmlSerializer serializer = new XmlSerializer(typeof(List<TreeNode>));
+
+                        using (FileStream fs = new FileStream("TestsXML.xml", FileMode.OpenOrCreate))
+                        {
+                            serializer.Serialize(fs, TreeNode.tests);
+                        }
 
                         this.Close();
                         break;

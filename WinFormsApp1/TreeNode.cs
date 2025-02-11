@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Windows.Forms;
-
+﻿using System;
+using System.Formats.Asn1;
+using System.Text.Json;
+using System.Xml.Serialization;
+[Serializable]
 public class TreeNode : IEnumerable<TreeNode>
 {
     private readonly Dictionary<string, TreeNode> _children =
@@ -9,6 +11,36 @@ public class TreeNode : IEnumerable<TreeNode>
     public readonly string ID;
     public TreeNode Parent { get; private set; }
     public static List<TreeNode> tests = new List<TreeNode>();
+
+    public TreeNode () {}
+
+     async public static void serialiaze ()
+    {
+        
+
+        /*List<TreeNode>*/
+        //using (FileStream fs = new FileStream("Tests.json", FileMode.OpenOrCreate))
+        //{
+        //    await JsonSerializer.SerializeAsync<TreeNode>(fs, text);
+        //}
+
+        //XmlSerializer serializer = new XmlSerializer(typeof(TreeNode));
+
+        //using (FileStream fs = new FileStream("Tests.xml", FileMode.OpenOrCreate))
+        //{
+        //    serializer.Serialize(fs, text);
+        //}
+
+
+        //var path = @"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Tests.xml";
+        //using (FileStream fs = new FileStream(path, FileMode.Open))
+        //{
+        //    XmlSerializer xSer = new XmlSerializer(typeof(List<TreeNode>));
+
+        //    xSer.Serialize(fs, TreeNode.tests);
+        //}
+
+    }
 
     public static void addTest (TreeNode test)
     {

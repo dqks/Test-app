@@ -220,8 +220,10 @@ namespace WinFormsApp1
             }
 
 			int countСheckedRightAnswers = 0;
+            int wrongAnswers = 0;
+			int questionAmount = 0;
 
-			var radioButtons = testingTab.GetAllNestedControls().OfType<RadioButton>().ToList();
+            var radioButtons = testingTab.GetAllNestedControls().OfType<RadioButton>().ToList();
 			var checkBoxes = testingTab.GetAllNestedControls().OfType<CheckBox>().ToList();
 
 			foreach (RadioButton radioButton in radioButtons)
@@ -239,13 +241,25 @@ namespace WinFormsApp1
 			{
 				foreach (string rightAnswer in rightAnswers)
 				{
-					if (checkBox.Text == rightAnswer && checkBox.Checked)
+					questionAmount++;
+
+                    if ((checkBox.Text == rightAnswer) && checkBox.Checked)
 					{
 						countСheckedRightAnswers++;
-					}
-				}
-			}
+					} else if ((checkBox.Text != rightAnswer) && checkBox.Checked)
+					{
+                        wrongAnswers++;
+                    }
+                }
 
+                if (wrongAnswers == questionAmount)
+                {
+                    countСheckedRightAnswers--;
+                }
+
+                wrongAnswers = 0;
+                questionAmount = 0;
+			}
 
             double result = Math.Round(countСheckedRightAnswers * 100.0 / rightAnswers.Count);
 			int grade = 0;
@@ -267,12 +281,13 @@ namespace WinFormsApp1
 
             TestResults.AddResult(subject, level, result, grade);
 
-
             MessageBox.Show(
 				"Процент правильных ответов - " + result + "%" + "\nВаша оценка " + grade,
 				"Результат",
 				MessageBoxButtons.OK,
 				MessageBoxIcon.Information);
+
+
             isClosedByUser = false;
             this.Close();
         }

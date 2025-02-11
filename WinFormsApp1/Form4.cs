@@ -6,8 +6,10 @@ using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace WinFormsApp1
 {
@@ -550,6 +552,10 @@ namespace WinFormsApp1
 				TreeNode.tests.Remove(sameSubject);
                 TreeNode.addTest(testWrapper, testPosition);
             }
+
+
+
+			TreeNode.serialiaze();
 
             isClosedByUser = false;
             this.Close();
