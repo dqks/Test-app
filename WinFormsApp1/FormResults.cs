@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace WinFormsApp1
 {
@@ -19,6 +20,7 @@ namespace WinFormsApp1
         public FormResults(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void FormResults_FormClosing(object sender, FormClosingEventArgs e)
@@ -31,12 +33,32 @@ namespace WinFormsApp1
         {
             int index = 1;
 
-            
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<User>));
+            List<User>? users;
+            //Десерализация, получаем из файла список всех пользователей
+            using (FileStream fs = new FileStream(@"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Users.xml", FileMode.OpenOrCreate))
+            {
+                users = xmlSerializer.Deserialize(fs) as List<User>;
+            }
 
-            //foreach (var result in TestResults.GetResults())
-            //{
+            User serializedUser = null;
 
-                //string[] strings = result.ToString().Split("DEL");
+            //Ищем, были ли зарегистрирован пользователь до этого, если был
+            //То присваиваем работаем с ним
+            foreach (User u in users)
+            {
+                if (user.name == u.name && user.group == u.group)
+                {
+                    serializedUser = u;
+                    break;
+                }
+            }
+
+
+            foreach (var result in serializedUser.GetResults())
+            {
+
+                string[] strings = result.ToString().Split("DEL");
 
                 Panel panelResult = new Panel();
                 Panel panelDelimeterNew = new Panel();
@@ -66,7 +88,7 @@ namespace WinFormsApp1
                 labelPrecents.Name = "labelPrecents" + index;
                 labelPrecents.Size = new Size(116, 63);
                 labelPrecents.TabIndex = 2;
-                labelPrecents.Text = "strings[2]" + "%";
+                labelPrecents.Text = strings[2] + "%";
                 labelPrecents.TextAlign = ContentAlignment.MiddleCenter;
 
                 labelGrade.Dock = DockStyle.Fill;
@@ -75,7 +97,7 @@ namespace WinFormsApp1
                 labelGrade.Name = "labelGrade" + index;
                 labelGrade.Size = new Size(689, 63);
                 labelGrade.TabIndex = 1;
-                labelGrade.Text = "strings[3].ToString()";
+                labelGrade.Text = strings[3].ToString();
                 labelGrade.TextAlign = ContentAlignment.MiddleCenter;
 
                 labelSubjectLevel.Dock = DockStyle.Left;
@@ -84,7 +106,7 @@ namespace WinFormsApp1
                 labelSubjectLevel.Name = "labelSubjectLevel" + index;
                 labelSubjectLevel.Size = new Size(400, 63);
                 labelSubjectLevel.TabIndex = 0;
-                labelSubjectLevel.Text = "strings[0]" + ", " + "strings[1]";
+                labelSubjectLevel.Text = strings[0] + ", " + strings[1];
                 labelSubjectLevel.TextAlign = ContentAlignment.MiddleLeft;
 
                 Controls.Add(panelResult);
@@ -93,7 +115,7 @@ namespace WinFormsApp1
                 Controls.Add(panelHeader);
 
                 index++;
-            //}
+            }
         }
     }
 }

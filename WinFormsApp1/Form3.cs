@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Collections;
+using System.Xml.Serialization;
 
 namespace WinFormsApp1
 {
@@ -49,6 +51,7 @@ namespace WinFormsApp1
 			this.subject = subject;
 			this.level = level;
 			this.child = child;
+			this.user = user;
 		}
 
 		private void Form3_Load(object sender, EventArgs e)
@@ -268,7 +271,29 @@ namespace WinFormsApp1
 				grade = 5;
 			}
 
-            //TestResults.AddResult(subject, level, result, grade);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<User>));
+            List<User>? users;
+            using (FileStream fs = new FileStream(@"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Users.xml", FileMode.OpenOrCreate))
+            {
+                users = xmlSerializer.Deserialize(fs) as List<User>;
+            }
+
+            User serializedUser = null;
+
+            //Ищем, были ли зарегистрирован пользователь до этого, если был
+            //То присваиваем работаем с ним
+            foreach (User u in users)
+            {
+                if (user.name == u.name && user.group == u.group)
+                {
+					u.AddResult(subject, level, result, grade);
+                    using (FileStream fs = new FileStream(@"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Users.xml", FileMode.OpenOrCreate))
+                    {
+                        xmlSerializer.Serialize(fs, users);
+                    }
+                    break;
+                }
+            }
 
             MessageBox.Show(
 				"Процент правильных ответов - " + result + "%" + "\nВаша оценка " + grade,

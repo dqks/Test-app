@@ -16,6 +16,8 @@
     <name>Алексей Иванов</name>
     <group>ИС-22</group>
     <isAdmin>false</isAdmin>
-    <results />
+    <results>
+      <string>ООПDEL1 уровеньDEL43DEL2</string>
+    </results>
   </User>
 </ArrayOfUser>

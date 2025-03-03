@@ -19,6 +19,11 @@ namespace WinFormsApp1
 
         public List<string> results = new List<string>();
 
+        public List<string> GetResults ()
+        {
+            return this.results;
+        }
+
         public User() {}
 
         public User (string name, string group)

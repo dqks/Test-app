@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Xml.Serialization;
 
 namespace WinFormsApp1
 {
@@ -18,6 +19,13 @@ namespace WinFormsApp1
                     comboBoxSubjects.Items.Add(node.ID);
                 }
             }
+
+            if (user.isAdmin == false)
+            {
+                addTestButton.Visible = false;
+                buttonEditTest.Visible = false;
+            }
+
         }
 
         public Form2(User user)
@@ -33,6 +41,12 @@ namespace WinFormsApp1
             }
 
             this.user = user;
+
+            if (user.isAdmin == false)
+            {
+                addTestButton.Visible = false;
+                buttonEditTest.Visible = false;
+            }
         }
 
         async private void nextButton_Click(object sender, EventArgs e)
@@ -121,15 +135,37 @@ namespace WinFormsApp1
 
         private void buttonResults_Click(object sender, EventArgs e)
         {
-            //if (TestResults.GetResults().Count == 0)
-            //{
-            //    MessageBox.Show(
-            //        "Вы ещё не прошли ни одного теста",
-            //        "Ошибка",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Error);
-            //    return;
-            //}
+
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<User>));
+            List<User>? users;
+            //Десерализация, получаем из файла список всех пользователей
+            using (FileStream fs = new FileStream(@"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Users.xml", FileMode.OpenOrCreate))
+            {
+                users = xmlSerializer.Deserialize(fs) as List<User>;
+            }
+
+            User serializedUser = null;
+
+            //Ищем, были ли зарегистрирован пользователь до этого, если был
+            //То присваиваем работаем с ним
+            foreach (User u in users)
+            {
+                if (user.name == u.name && user.group == u.group)
+                {
+                    serializedUser = u;
+                    break;
+                }
+            }
+
+            if (serializedUser.GetResults().Count == 0)
+            {
+                MessageBox.Show(
+                    "Вы ещё не прошли ни одного теста",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
 
             FormResults formResults = new FormResults(user);
             formResults.Show();
