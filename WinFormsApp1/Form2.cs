@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Text.Json;
 
 namespace WinFormsApp1
 {
     public partial class Form2 : Form
     {
+
+        User user;
 
         public Form2()
         {
@@ -26,10 +18,9 @@ namespace WinFormsApp1
                     comboBoxSubjects.Items.Add(node.ID);
                 }
             }
-
         }
 
-        public Form2(TreeNode test)
+        public Form2(User user)
         {
             InitializeComponent();
 
@@ -38,12 +29,13 @@ namespace WinFormsApp1
                 foreach (var node in TreeNode.tests)
                 {
                     comboBoxSubjects.Items.Add(node.ID);
-
                 }
             }
+
+            this.user = user;
         }
 
-        private void nextButton_Click(object sender, EventArgs e)
+        async private void nextButton_Click(object sender, EventArgs e)
         {
             string? subject;
             if (comboBoxSubjects.SelectedItem != null)
@@ -106,7 +98,7 @@ namespace WinFormsApp1
                     return;
                 }
 
-                Form3 form3 = new Form3(subject, level, child);
+                Form3 form3 = new Form3(subject, level, child, user);
                 form3.Show();
                 this.Close();
             }
@@ -129,19 +121,17 @@ namespace WinFormsApp1
 
         private void buttonResults_Click(object sender, EventArgs e)
         {
-            /*TestResults.AddResult("subject", "level", 100, 5);*/
+            //if (TestResults.GetResults().Count == 0)
+            //{
+            //    MessageBox.Show(
+            //        "Вы ещё не прошли ни одного теста",
+            //        "Ошибка",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Error);
+            //    return;
+            //}
 
-            if (TestResults.GetResults().Count == 0)
-            {
-                MessageBox.Show(
-                    "Вы ещё не прошли ни одного теста",
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return;
-            }
-
-            FormResults formResults = new FormResults();
+            FormResults formResults = new FormResults(user);
             formResults.Show();
             this.Close();
         }
@@ -209,9 +199,6 @@ namespace WinFormsApp1
                     return;
                 }
 
-                //Form3 form3 = new Form3(subject, level, child);
-                //form3.Show();
-                //this.Close();
                 FormEditTest formEditTest = new FormEditTest(level, subject);
                 formEditTest.Show();
                 this.Close();
@@ -227,14 +214,3 @@ namespace WinFormsApp1
         }
     }
 }
-
-/*
- 
- ООП
-C#
-C++
-JavaScript
- 
- */
-
-//Создать форму для создания вопросов к тесту, предметов и т.д.

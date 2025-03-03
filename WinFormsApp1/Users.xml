@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <name>Эдмон Нарметов</name>
+    <group>ИС-22</group>
+    <isAdmin>true</isAdmin>
+    <results />
+  </User>
+  <User>
+    <name>Максим Штин</name>
+    <group>ИС-22</group>
+    <isAdmin>true</isAdmin>
+    <results />
+  </User>
+  <User>
+    <name>Алексей Иванов</name>
+    <group>ИС-22</group>
+    <isAdmin>false</isAdmin>
+    <results />
+  </User>
+</ArrayOfUser>

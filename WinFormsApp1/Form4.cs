@@ -1,24 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.DirectoryServices.ActiveDirectory;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Serialization;
-
-namespace WinFormsApp1
+﻿namespace WinFormsApp1
 {
 	public partial class createTestForm : Form
 	{
 
 		TreeNode testWrapper;
 		bool exists = false;
-
         private bool isClosedByUser = true;
 		int questionNumber = 2;
 		public createTestForm()
@@ -340,7 +326,7 @@ namespace WinFormsApp1
 			testingTab.SelectedIndex = index;
 		}
 
-		private void buttonCreate_Click(object sender, EventArgs e)
+		async private void buttonCreate_Click(object sender, EventArgs e)
 		{
             List<TreeNode> nodes = new List<TreeNode>();
 
@@ -553,8 +539,6 @@ namespace WinFormsApp1
                 TreeNode.addTest(testWrapper, testPosition);
             }
 
-
-
 			TreeNode.serialiaze();
 
             isClosedByUser = false;
@@ -562,37 +546,3 @@ namespace WinFormsApp1
         }
 	}
 }
-
-
-/*
-Минимум 5 вопросов из полей: 
-	должны быть заполнены минимум 2 поля
-	необязательно заполнять все 5 полей
-	если они все не будут заполнены, то выводить ошибку 
-	Колво вопросов в будет определяться по колву заполненных полей
-
-На каждой вкладке должен быть выпадающий список:
-	Первый элемент - надпись checkBox
-	Второй элемент - надпись radioButton
-	
-Две кнопки:
-	Перейти к след вопросу
-	Перейти к пред вопросу
-
-Напротив каждого поля checkbox
-	Если выбран в списке checkbox то тикнутых вариантов может быть мининмум 1 и максимум все вопросы
-	Если выбран radiobutton то максимум может быть тикнут 1 чекбокс
-	Если что-то выше произойдет, то на следующий вопрос перейти будет нельзя
-
-Создать проверку существует ли уже такое название теста
-
-Нужно будет при нажимании кнопки Создать тест вызывать 2 форму с конструктором, через который мы опрокинем новый TreeNode,
-и добавляет новую опцию 
-
-Во вторрой форме обрабатывать исключение, при котором можно выбрать предмет с уровнем, который еще не существует 
-(либо создать зависимость и выводить варианты уровня в зависимости от выбранного предмета)
-
-Исключения:
-Когда по тесту есть все уровни и мы создаем новый
-Когда создаем тест с уже существующим названием и существующим уровнем
- */

@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.TabPage;
-
+﻿using System.Collections;
 
 namespace WinFormsApp1
 {
@@ -20,6 +9,7 @@ namespace WinFormsApp1
 		private TreeNode child;
 		private ArrayList rightAnswers = new ArrayList();
 		private bool isClosedByUser = true;
+		User user;
 		public Form3()
 		{
 			InitializeComponent();
@@ -30,7 +20,7 @@ namespace WinFormsApp1
 		{
 			if (isClosedByUser == false)
 			{
-				Form2 form2 = new Form2();
+				Form2 form2 = new Form2(user);
 				form2.Show();
 			} else
 			{
@@ -46,15 +36,14 @@ namespace WinFormsApp1
 						break;
 
 					default:
-                        Form2 form2 = new Form2();
+                        Form2 form2 = new Form2(user);
                         form2.Show();
                         break;
 				}
-
             }
 		}
 
-		public Form3(string subject, string level, TreeNode child)
+		public Form3(string subject, string level, TreeNode child, User user)
 		{
 			InitializeComponent();
 			this.subject = subject;
@@ -279,7 +268,7 @@ namespace WinFormsApp1
 				grade = 5;
 			}
 
-            TestResults.AddResult(subject, level, result, grade);
+            //TestResults.AddResult(subject, level, result, grade);
 
             MessageBox.Show(
 				"Процент правильных ответов - " + result + "%" + "\nВаша оценка " + grade,

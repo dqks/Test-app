@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,14 +13,17 @@ namespace WinFormsApp1
 {
     public partial class FormResults : Form
     {
-        public FormResults()
+
+        User user;
+
+        public FormResults(User user)
         {
             InitializeComponent();
         }
 
         private void FormResults_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Form2 form2 = new Form2();
+            Form2 form2 = new Form2(user);
             form2.Show();
         }
 
@@ -29,10 +33,10 @@ namespace WinFormsApp1
 
             
 
-            foreach (var result in TestResults.GetResults())
-            {
+            //foreach (var result in TestResults.GetResults())
+            //{
 
-                string[] strings = result.ToString().Split("DEL");
+                //string[] strings = result.ToString().Split("DEL");
 
                 Panel panelResult = new Panel();
                 Panel panelDelimeterNew = new Panel();
@@ -62,7 +66,7 @@ namespace WinFormsApp1
                 labelPrecents.Name = "labelPrecents" + index;
                 labelPrecents.Size = new Size(116, 63);
                 labelPrecents.TabIndex = 2;
-                labelPrecents.Text = strings[2] + "%";
+                labelPrecents.Text = "strings[2]" + "%";
                 labelPrecents.TextAlign = ContentAlignment.MiddleCenter;
 
                 labelGrade.Dock = DockStyle.Fill;
@@ -71,7 +75,7 @@ namespace WinFormsApp1
                 labelGrade.Name = "labelGrade" + index;
                 labelGrade.Size = new Size(689, 63);
                 labelGrade.TabIndex = 1;
-                labelGrade.Text = strings[3].ToString();
+                labelGrade.Text = "strings[3].ToString()";
                 labelGrade.TextAlign = ContentAlignment.MiddleCenter;
 
                 labelSubjectLevel.Dock = DockStyle.Left;
@@ -80,7 +84,7 @@ namespace WinFormsApp1
                 labelSubjectLevel.Name = "labelSubjectLevel" + index;
                 labelSubjectLevel.Size = new Size(400, 63);
                 labelSubjectLevel.TabIndex = 0;
-                labelSubjectLevel.Text = strings[0] + ", " + strings[1];
+                labelSubjectLevel.Text = "strings[0]" + ", " + "strings[1]";
                 labelSubjectLevel.TextAlign = ContentAlignment.MiddleLeft;
 
                 Controls.Add(panelResult);
@@ -89,7 +93,7 @@ namespace WinFormsApp1
                 Controls.Add(panelHeader);
 
                 index++;
-            }
+            //}
         }
     }
 }

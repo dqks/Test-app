@@ -1,7 +1,9 @@
 ﻿using System;
-using System.Formats.Asn1;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.Json;
 using System.Xml.Serialization;
+using static System.Net.Mime.MediaTypeNames;
+
 [Serializable]
 public class TreeNode : IEnumerable<TreeNode>
 {
@@ -15,31 +17,13 @@ public class TreeNode : IEnumerable<TreeNode>
     public TreeNode () {}
 
      async public static void serialiaze ()
-    {
-        
-
-        /*List<TreeNode>*/
-        //using (FileStream fs = new FileStream("Tests.json", FileMode.OpenOrCreate))
-        //{
-        //    await JsonSerializer.SerializeAsync<TreeNode>(fs, text);
-        //}
-
-        //XmlSerializer serializer = new XmlSerializer(typeof(TreeNode));
-
-        //using (FileStream fs = new FileStream("Tests.xml", FileMode.OpenOrCreate))
-        //{
-        //    serializer.Serialize(fs, text);
-        //}
-
-
-        //var path = @"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Tests.xml";
-        //using (FileStream fs = new FileStream(path, FileMode.Open))
-        //{
-        //    XmlSerializer xSer = new XmlSerializer(typeof(List<TreeNode>));
-
-        //    xSer.Serialize(fs, TreeNode.tests);
-        //}
-
+     {
+        XmlSerializer formatter = new XmlSerializer(typeof(TreeNode));
+        TreeNode tn = new TreeNode("Test");
+        using (FileStream fs = new FileStream(@"people.xml", FileMode.OpenOrCreate))
+        {
+            formatter.Serialize(fs, tn);
+        }
     }
 
     public static void addTest (TreeNode test)
@@ -59,7 +43,6 @@ public class TreeNode : IEnumerable<TreeNode>
 
     public TreeNode GetChild(string id)
     {
-        /*return this._children[id];*/
         TreeNode res;
         _children.TryGetValue(id, out res);
         return res;
@@ -563,8 +546,6 @@ public class TreeNode : IEnumerable<TreeNode>
                                 } ,
                             }
                         };
-        //TreeNode[] array = [oopTree, csTree, cppTree, jsTree];
-        //return array;
         tests.Add(oopTree);
         tests.Add(csTree);
         tests.Add(cppTree);
