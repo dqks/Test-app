@@ -1,4 +1,6 @@
-﻿namespace WinFormsApp1
+﻿using Microsoft.VisualBasic.ApplicationServices;
+
+namespace WinFormsApp1
 {
 	public partial class createTestForm : Form
 	{
@@ -7,17 +9,18 @@
 		bool exists = false;
         private bool isClosedByUser = true;
 		int questionNumber = 2;
-		public createTestForm()
+		User user;
+		public createTestForm(User user)
 		{
 			InitializeComponent();
-
+			this.user = user;
 		}
 
 		private void createTestForm_FormClosing(object sender, FormClosingEventArgs e)
-		{
+        {
 			if (isClosedByUser == false)
 			{
-				Form2 form2 = new Form2();
+				FormTestSettings form2 = new FormTestSettings(user);
 				form2.Show();
 			}
 			else
@@ -34,7 +37,7 @@
 						break;
 
 					default:
-						Form2 form2 = new Form2();
+						FormTestSettings form2 = new FormTestSettings(user);
 						form2.Show();
 						break;
 				}
@@ -539,7 +542,8 @@
                 TreeNode.addTest(testWrapper, testPosition);
             }
 
-			TreeNode.serialiaze();
+            TreeNode.SerializeToXml(TreeNode.tests, @"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Tests.xml");
+
 
             isClosedByUser = false;
             this.Close();

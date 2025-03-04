@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace WinFormsApp1
 {
-    partial class Form3
+    partial class FormTestCompleting
     {
         /// <summary>
         /// Required designer variable.

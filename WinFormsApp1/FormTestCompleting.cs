@@ -4,15 +4,15 @@ using System.Xml.Serialization;
 
 namespace WinFormsApp1
 {
-	public partial class Form3 : Form
+	public partial class FormTestCompleting : Form
 	{
 		private string subject;
 		private string level;
 		private TreeNode child;
 		private ArrayList rightAnswers = new ArrayList();
 		private bool isClosedByUser = true;
-		User user;
-		public Form3()
+		private User user;
+		public FormTestCompleting()
 		{
 			InitializeComponent();
 		}
@@ -22,7 +22,7 @@ namespace WinFormsApp1
 		{
 			if (isClosedByUser == false)
 			{
-				Form2 form2 = new Form2(user);
+				FormTestSettings form2 = new FormTestSettings(user);
 				form2.Show();
 			} else
 			{
@@ -38,14 +38,14 @@ namespace WinFormsApp1
 						break;
 
 					default:
-                        Form2 form2 = new Form2(user);
+                        FormTestSettings form2 = new FormTestSettings(user);
                         form2.Show();
                         break;
 				}
             }
 		}
 
-		public Form3(string subject, string level, TreeNode child, User user)
+		public FormTestCompleting(string subject, string level, TreeNode child, User user)
 		{
 			InitializeComponent();
 			this.subject = subject;

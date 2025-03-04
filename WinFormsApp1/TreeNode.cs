@@ -1,29 +1,26 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.Json;
+using System.Xml;
 using System.Xml.Serialization;
 using static System.Net.Mime.MediaTypeNames;
 
-[Serializable]
+[DataContract]
 public class TreeNode : IEnumerable<TreeNode>
 {
-    private readonly Dictionary<string, TreeNode> _children =
-                                        new Dictionary<string, TreeNode>();
+    [DataMember]
+    public Dictionary<string, TreeNode> Сhildren { get; set; }
+    [DataMember]
+    public string ID;
 
-    public readonly string ID;
+    [IgnoreDataMember]
     public TreeNode Parent { get; private set; }
     public static List<TreeNode> tests = new List<TreeNode>();
 
-    public TreeNode () {}
-
-     async public static void serialiaze ()
-     {
-        XmlSerializer formatter = new XmlSerializer(typeof(TreeNode));
-        TreeNode tn = new TreeNode("Test");
-        using (FileStream fs = new FileStream(@"people.xml", FileMode.OpenOrCreate))
-        {
-            formatter.Serialize(fs, tn);
-        }
+    public TreeNode ()
+    {
+        Сhildren = new Dictionary<string, TreeNode>();
     }
 
     public static void addTest (TreeNode test)
@@ -39,12 +36,13 @@ public class TreeNode : IEnumerable<TreeNode>
     public TreeNode(string id)
     {
         this.ID = id;
+        Сhildren = new Dictionary<string, TreeNode>();
     }
 
     public TreeNode GetChild(string id)
     {
         TreeNode res;
-        _children.TryGetValue(id, out res);
+        Сhildren.TryGetValue(id, out res);
         return res;
     }
 
@@ -52,16 +50,16 @@ public class TreeNode : IEnumerable<TreeNode>
     {
         if (item.Parent != null)
         {
-            item.Parent._children.Remove(item.ID);
+            item.Parent.Сhildren.Remove(item.ID);
         }
 
         item.Parent = this;
-        this._children.Add(item.ID, item);
+        this.Сhildren.Add(item.ID, item);
     }
 
     public IEnumerator<TreeNode> GetEnumerator()
     {
-        return this._children.Values.GetEnumerator();
+        return this.Сhildren.Values.GetEnumerator();
     }
 
     System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
@@ -71,7 +69,25 @@ public class TreeNode : IEnumerable<TreeNode>
 
     public int Count
     {
-        get { return this._children.Count; }
+        get { return this.Сhildren.Count; }
+    }
+
+    public static void SerializeToXml(List<TreeNode> root, string filePath)
+    {
+        DataContractSerializer serializer = new DataContractSerializer(typeof(List<TreeNode>));
+        using (XmlWriter writer = XmlWriter.Create(filePath))
+        {
+            serializer.WriteObject(writer, root);
+        }
+    }
+
+    public static List<TreeNode> DeserializeFromXml(string filePath)
+    {
+        DataContractSerializer serializer = new DataContractSerializer(typeof(List<TreeNode>));
+        using (XmlReader reader = XmlReader.Create(filePath))
+        {
+            return (List<TreeNode>)serializer.ReadObject(reader);
+        }
     }
 
     public static List<TreeNode> makeTreeNode()

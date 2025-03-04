@@ -10,7 +10,16 @@
     <name>Максим Штин</name>
     <group>ИС-22</group>
     <isAdmin>true</isAdmin>
-    <results />
+    <results>
+      <string>НОВЫЙТЕСТDEL1 уровеньDEL100DEL5</string>
+      <string>ТЕСТНОВЫЙDEL1 уровеньDEL100DEL5</string>
+      <string>НОВЫЙТЕСТDEL1 уровеньDEL100DEL5</string>
+      <string>ООПDEL1 уровеньDEL29DEL2</string>
+      <string>ООПDEL1 уровеньDEL29DEL2</string>
+      <string>C#DEL1 уровеньDEL33DEL2</string>
+      <string>аааааDEL1 уровеньDEL100DEL5</string>
+      <string>аааааDEL1 уровеньDEL100DEL5</string>
+    </results>
   </User>
   <User>
     <name>Алексей Иванов</name>

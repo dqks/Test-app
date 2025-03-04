@@ -3,12 +3,12 @@ using System.Xml.Serialization;
 
 namespace WinFormsApp1
 {
-    public partial class Form2 : Form
+    public partial class FormTestSettings : Form
     {
 
         User user;
 
-        public Form2()
+        public FormTestSettings()
         {
             InitializeComponent();
 
@@ -28,7 +28,7 @@ namespace WinFormsApp1
 
         }
 
-        public Form2(User user)
+        public FormTestSettings(User user)
         {
             InitializeComponent();
 
@@ -112,7 +112,7 @@ namespace WinFormsApp1
                     return;
                 }
 
-                Form3 form3 = new Form3(subject, level, child, user);
+                FormTestCompleting form3 = new FormTestCompleting(subject, level, child, user);
                 form3.Show();
                 this.Close();
             }
@@ -128,7 +128,7 @@ namespace WinFormsApp1
 
         private void addTestButton_Click(object sender, EventArgs e)
         {
-            createTestForm createTest = new createTestForm();
+            createTestForm createTest = new createTestForm(user);
             createTest.Show();
             this.Close();
         }
@@ -235,7 +235,7 @@ namespace WinFormsApp1
                     return;
                 }
 
-                FormEditTest formEditTest = new FormEditTest(level, subject);
+                FormEditTest formEditTest = new FormEditTest(level, subject, user);
                 formEditTest.Show();
                 this.Close();
             }

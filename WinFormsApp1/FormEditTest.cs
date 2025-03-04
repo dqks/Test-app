@@ -21,9 +21,9 @@ namespace WinFormsApp1
         private bool isClosedByUser = true;
         int questionNumber = 2;
         TreeNode initialTest;
+        User user;
 
-
-        public FormEditTest(string level, string subject)
+        public FormEditTest(string level, string subject, User user)
         {
             InitializeComponent();
             this.level = level;
@@ -38,12 +38,14 @@ namespace WinFormsApp1
                     initialTest = test;
                 }
             }
+
+            this.user = user;
         }
         private void FormEditTest_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isClosedByUser == false)
             {
-                Form2 form2 = new Form2();
+                FormTestSettings form2 = new FormTestSettings(user);
                 form2.Show();
             }
             else
@@ -60,7 +62,7 @@ namespace WinFormsApp1
                         break;
 
                     default:
-                        Form2 form2 = new Form2();
+                        FormTestSettings form2 = new FormTestSettings();
                         form2.Show();
                         break;
                 }
@@ -380,6 +382,9 @@ namespace WinFormsApp1
 
             TreeNode.tests = tests;
 
+            TreeNode.SerializeToXml(TreeNode.tests, @"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Tests.xml");
+
+
             isClosedByUser = false;
             this.Close();
         }
@@ -431,15 +436,7 @@ namespace WinFormsApp1
                     {
                         tests.Remove(testToRemove);
 
-                        XmlSerializer serializer = new XmlSerializer(typeof(TreeNode));
-
-                        using (FileStream fs = new FileStream("TestsXML.xml", FileMode.OpenOrCreate))
-                        {
-                            foreach (var node in TreeNode.tests)
-                            {
-                                serializer.Serialize(fs, node);
-                            }
-                        }
+                        TreeNode.SerializeToXml(TreeNode.tests, @"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Tests.xml");
 
                         this.Close();
                         break;
@@ -451,12 +448,7 @@ namespace WinFormsApp1
 
                         TreeNode.tests = tests;
 
-                        XmlSerializer serializer = new XmlSerializer(typeof(List<TreeNode>));
-
-                        using (FileStream fs = new FileStream("TestsXML.xml", FileMode.OpenOrCreate))
-                        {
-                            serializer.Serialize(fs, TreeNode.tests);
-                        }
+                        TreeNode.SerializeToXml(TreeNode.tests, @"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Tests.xml");
 
                         this.Close();
                         break;

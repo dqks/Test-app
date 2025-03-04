@@ -25,7 +25,7 @@ namespace WinFormsApp1
 
         private void FormResults_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Form2 form2 = new Form2(user);
+            FormTestSettings form2 = new FormTestSettings(user);
             form2.Show();
         }
 

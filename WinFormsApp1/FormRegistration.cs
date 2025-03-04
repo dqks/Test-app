@@ -71,8 +71,13 @@ namespace WinFormsApp1
                 }
             }
 
-			TreeNode.makeTreeNode();
-			Form2 form2 = new Form2(user);
+			//TreeNode.makeTreeNode();
+			//TreeNode.SerializeToXml(TreeNode.tests, @"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Tests.xml");
+
+			TreeNode.tests = TreeNode.DeserializeFromXml(@"C:\Users\user\Desktop\Курсовая работа\Приложение\WinFormsApp1\Tests.xml");
+
+
+            FormTestSettings form2 = new FormTestSettings(user);
 			form2.Show();
 			this.Hide();
 		}
